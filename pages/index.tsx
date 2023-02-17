@@ -1,5 +1,8 @@
 import Head from 'next/head'
 
+
+let a = 4
+
 export default function Home() {
   return (
     <>
