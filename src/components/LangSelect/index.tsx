@@ -1,67 +1,58 @@
 import React from 'react';
-import { WithTranslation, withTranslation } from 'react-i18next';
-
-import { TLanguage, ELanguage } from '../../constants';
+import { useRouter } from 'next/router';
 
 import * as S from './style';
-import RUIcon from './icons/ru.svg';
-import ENIcon from './icons/en.svg';
-import UAIcon from './icons/ua.svg';
-import KZIcon from './icons/kz.svg';
-import DEIcon from './icons/de.svg';
+import ruIcon from './icons/ru.svg';
+import enIcon from './icons/en.svg';
 
 type TOwnProps = {
     className?: string;
 };
 
-type TProps = TOwnProps & WithTranslation;
+type TProps = TOwnProps;
 
-const iconMap: Map<TLanguage, React.ComponentType<{}>> = new Map([
-    [ELanguage.ru, RUIcon.src],
-    [ELanguage.en, ENIcon.src],
-    [ELanguage.ua, UAIcon.src],
-    [ELanguage.kz, KZIcon.src],
-    [ELanguage.de, DEIcon.src],
+const iconMap = new Map([
+    ['en', enIcon],
+    ['ru', ruIcon],
 ]);
 
-const langName: Map<TLanguage, string> = new Map([
-    [ELanguage.ru, 'Русский'],
-    [ELanguage.en, 'English'],
-    [ELanguage.ua, 'Українська'],
-    [ELanguage.kz, 'Русский'],
-    [ELanguage.de, 'Deutsch'],
+const langName = new Map([
+    ['en', 'English'],
+    ['ru', 'Русский'],
 ]);
 
-const languages = Object.keys(ELanguage) as TLanguage[];
+const languages = ['en', 'ru'];
 
-const LangSelect: React.FC<TProps> = ({ className, i18n }) => {
-    const currenTLanguage = i18n.language as ELanguage;
+const LangSelect: React.FC<TProps> = ({ className }) => {
+    const router = useRouter();
 
     return (
         <S.Dropdown
             placementX="right"
             className={className}
-            head={<S.Icon as={iconMap.get(currenTLanguage)} />}
+            head={<S.Icon src={iconMap.get(router.locale as string)} alt="Language" />}
             overlay={
                 <S.Overlay>
-                    {languages
-                        // Add rest locales
-                        .filter((lang) => lang === 'ru' || lang === 'en')
-                        .map((lang) => {
-                            if (lang === currenTLanguage) {
-                                return null;
-                            }
-                            return (
-                                <S.Option key={lang} onClick={() => i18n.changeLanguage(lang)}>
-                                    <S.Icon as={iconMap.get(lang)} />
-                                    <S.Text>{langName.get(lang)}</S.Text>
-                                </S.Option>
-                            );
-                        })}
+                    {languages.map((lang) => {
+                        if (lang === router.locale) {
+                            return null;
+                        }
+                        return (
+                            <S.Option
+                                key={lang}
+                                onClick={() => {
+                                    router.push('/', '/', { locale: lang });
+                                }}
+                            >
+                                <S.Icon src={iconMap.get(lang)} alt="Language" />
+                                <S.Text>{langName.get(lang)}</S.Text>
+                            </S.Option>
+                        );
+                    })}
                 </S.Overlay>
             }
         />
     );
 };
 
-export default withTranslation()(LangSelect);
+export default LangSelect;

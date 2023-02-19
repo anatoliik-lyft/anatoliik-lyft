@@ -1,11 +1,11 @@
 import React from 'react';
-import { useTranslation } from 'react-i18next';
+import { useTranslations } from 'next-intl';
 
 import * as S from './style';
 import faceImage from './images/face.png';
 
 const Main = () => {
-    const { t } = useTranslation('Home');
+    const t = useTranslations('Index');
 
     return (
         <S.Main>

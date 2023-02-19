@@ -1,6 +1,6 @@
 import React from 'react';
 import Glider from 'glider-js';
-import { useTranslation } from 'react-i18next';
+import { useTranslations } from 'next-intl';
 
 import * as S from './style';
 import faceImgSrc from './images/face.png';
@@ -16,9 +16,9 @@ const cards = [
 ];
 
 const Skills = () => {
-    const { t } = useTranslation('Home');
+    const t = useTranslations('Index');
 
-    React.useLayoutEffect(() => {
+    React.useEffect(() => {
         new Glider(document.querySelector('#glider-skills') as HTMLElement, {
             draggable: true,
             dots: '#glider-skills-dots',

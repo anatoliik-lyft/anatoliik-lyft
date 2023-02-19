@@ -281,20 +281,6 @@ class Dropdown extends React.Component<TProps, IState> {
             return;
         }
 
-        // if (typeof closeWhen === 'string') {
-        //   if (Dropdown[closeWhen](event.target as ISubmitButtonNode, headNode, overlayNode)) {
-        //     this.handleHide();
-        //   }
-        //   return;
-        // }
-
-        // if (typeof closeWhen === 'function') {
-        //   if (closeWhen(event.target as TPortalNode, headNode, overlayNode)) {
-        //     this.handleHide();
-        //   }
-        //   return;
-        // }
-
         this.handleHide();
     };
 

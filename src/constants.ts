@@ -5,16 +5,6 @@ export const PATHS = {
     MAP: '/map',
 };
 
-export enum ELanguage {
-    ru = 'ru',
-    ua = 'ua',
-    en = 'en',
-    kz = 'kz',
-    de = 'de',
-}
-
-export type TLanguage = keyof typeof ELanguage;
-
 /* eslint-disable prettier/prettier */
 export const LEETCODE_ARTICLES = [
   {

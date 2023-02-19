@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import styled from 'styled-components';
 
 import { mixins, TTheme } from '@/styles';
@@ -39,7 +40,7 @@ export const Text = styled.div`
   `}
 `;
 
-export const Icon = styled.div`
+export const Icon = styled(Image)`
     ${mixins.round('24px')}
     border: 1px solid ${({ theme }: TTheme) => theme.color.lightGrey};
 
