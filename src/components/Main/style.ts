@@ -99,7 +99,6 @@ export const Face = styled.div`
 `;
 
 export const FaceImg = styled(Image)`
-    ${mixins.position({ position: 'relative', zIndex: 1 })}
     width: 100%;
     height: 100%;
 `;

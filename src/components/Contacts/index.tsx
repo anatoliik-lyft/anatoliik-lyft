@@ -1,5 +1,5 @@
 import React from 'react';
-import { useTranslation } from 'react-i18next';
+import { useTranslations } from 'next-intl';
 
 import logoIcon from '@/icons/logo.svg';
 
@@ -18,7 +18,7 @@ const socialMediaList = [
 ];
 
 const Contacts = () => {
-    const { t } = useTranslation('Home');
+    const t = useTranslations('Index');
 
     return (
         <S.Contacts id={id}>

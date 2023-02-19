@@ -1,12 +1,12 @@
 import React from 'react';
-import { useTranslation } from 'react-i18next';
+import { useTranslations } from 'next-intl';
 
 import * as S from './style';
 
 const items = ['l1', 'l2', 'l3', 'l4', 'l5'];
 
 const About = () => {
-    const { t } = useTranslation('Home');
+    const t = useTranslations('Index');
 
     return (
         <S.About>

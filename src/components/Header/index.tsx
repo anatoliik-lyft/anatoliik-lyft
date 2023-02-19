@@ -1,5 +1,5 @@
 import React from 'react';
-import { useTranslation } from 'react-i18next';
+import { useTranslations } from 'next-intl';
 
 import Drawer from '@/components/Drawer';
 import logoIcon from 'src/icons/logo.svg';
@@ -15,7 +15,7 @@ import { id as experienceId } from '../Experience';
 const NAVIGATION_LIST = [skillsId, experienceId, articlesId, startupId, contactsId];
 
 const Header = () => {
-    const { t } = useTranslation();
+    const t = useTranslations('Components');
     const [barOpened, setBarOpened] = React.useState(false);
     const toggleDrawer = () => setBarOpened(!barOpened);
     const handleClick = (e: React.SyntheticEvent<HTMLAnchorElement>) => {
@@ -41,7 +41,7 @@ const Header = () => {
                     <S.MobileMenu>
                         {NAVIGATION_LIST.map((item) => (
                             <S.NavigationItem onClick={handleClick} href={`#${item}`} key={item}>
-                                {t(`Header:${item}`)}
+                                {t(`Header.${item}`)}
                             </S.NavigationItem>
                         ))}
                     </S.MobileMenu>
@@ -51,7 +51,7 @@ const Header = () => {
                 <S.Navigation>
                     {NAVIGATION_LIST.map((item) => (
                         <S.NavigationItem onClick={handleClick} href={`#${item}`} key={item}>
-                            {t(`Header:${item}`)}
+                            {t(`Header.${item}`)}
                         </S.NavigationItem>
                     ))}
                 </S.Navigation>

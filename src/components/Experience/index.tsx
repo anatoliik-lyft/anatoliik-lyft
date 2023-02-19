@@ -1,5 +1,5 @@
 import React from 'react';
-import { useTranslation } from 'react-i18next';
+import { useTranslations } from 'next-intl';
 
 import * as S from './style';
 import faceImageSrc from './images/face.png';
@@ -21,7 +21,7 @@ const cards = [
 ];
 
 const Experience = () => {
-    const { t } = useTranslation('Home');
+    const t = useTranslations('Index');
 
     return (
         <S.Experience id={id}>

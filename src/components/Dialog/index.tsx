@@ -22,7 +22,7 @@ const Dialog: React.FC<IOwnProps> = ({
     withoutCloseButton = false,
     component: WindowComponent = S.Window,
 }) => {
-    React.useLayoutEffect(() => {
+    React.useEffect(() => {
         if (open) {
             const originalStyle = window.getComputedStyle(document.body).overflow;
             document.documentElement.style.overflow = 'hidden';

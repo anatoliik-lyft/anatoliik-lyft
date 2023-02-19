@@ -1,6 +1,6 @@
 import React from 'react';
 import Glider from 'glider-js';
-import { useTranslation } from 'react-i18next';
+import { useTranslations } from 'next-intl';
 
 import { Dialog, DialogContent } from '@/components';
 
@@ -22,9 +22,9 @@ const cards = [
 const Articles = () => {
     const [activeDialog, setActiveDialog] = React.useState<string | null>(null);
     const [dialogVisible, setDialogVisible] = React.useState<boolean>(false);
-    const { t } = useTranslation('Home');
+    const t = useTranslations('Index');
 
-    React.useLayoutEffect(() => {
+    React.useEffect(() => {
         new Glider(document.querySelector('#glider-articles') as HTMLElement, {
             draggable: true,
             dots: '#glider-articles-dots',

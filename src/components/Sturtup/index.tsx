@@ -1,12 +1,12 @@
 import React from 'react';
-import { useTranslation } from 'react-i18next';
+import { useTranslations } from 'next-intl';
 
 import * as S from './style';
 
 export const id = 'startup';
 
 const Sturtup = () => {
-    const { t } = useTranslation('Home');
+    const t = useTranslations('Index');
 
     return (
         <S.Sturtup id={id}>
