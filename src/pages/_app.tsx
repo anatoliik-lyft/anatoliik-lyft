@@ -13,7 +13,6 @@ import GlobalStyle from '@/styles/global';
 
 export default function App({ Component, pageProps }: AppProps) {
     // TODO: use https://vercel.com/docs/concepts/functions/edge-functions/og-image-generation
-    // TODO: use Next.js fonts with Roboto https://nextjs.org/docs/basic-features/font-optimization
     return (
         <>
             <Head>
