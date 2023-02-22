@@ -12,7 +12,6 @@ import Header from '@/components/Header';
 import GlobalStyle from '@/styles/global';
 
 export default function App({ Component, pageProps }: AppProps) {
-    // TODO: use https://vercel.com/docs/concepts/functions/edge-functions/og-image-generation
     return (
         <>
             <Head>
