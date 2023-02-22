@@ -1,5 +1,4 @@
 import React from 'react';
-import { CSSTransition } from 'react-transition-group';
 import { StyledComponent, ThemeContext } from 'styled-components';
 
 import { TTheme } from '@/styles';
@@ -43,16 +42,14 @@ const Dialog: React.FC<IOwnProps> = ({
 
     const theme: TTheme['theme'] = React.useContext(ThemeContext);
 
-    return (
-        <CSSTransition appear in={open} unmountOnExit classNames="fade" timeout={theme.transition.duration}>
-            <S.Modal onClose={onClose}>
-                <WindowComponent role="button" onMouseDown={(e: React.SyntheticEvent) => e.stopPropagation()}>
-                    {renderCloseButton()}
-                    {children}
-                </WindowComponent>
-            </S.Modal>
-        </CSSTransition>
-    );
+    return open ? (
+        <S.Modal onClose={onClose}>
+            <WindowComponent role="button" onMouseDown={(e: React.SyntheticEvent) => e.stopPropagation()}>
+                {renderCloseButton()}
+                {children}
+            </WindowComponent>
+        </S.Modal>
+    ) : null;
 };
 
 export default Dialog;

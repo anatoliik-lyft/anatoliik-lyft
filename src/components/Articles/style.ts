@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import styled, { css } from 'styled-components';
 
 import { mixins, TTheme, hexToRgba } from '@/styles';
@@ -14,8 +15,8 @@ export const Articles = styled.section`
     background-color: ${({ theme }: TTheme) => theme.color.white};
 
     ${mixins.media.laptop`
-    padding: 56px 0;
-  `}
+        padding: 56px 0;
+    `}
 `;
 
 export const Container = styled.div`
@@ -37,8 +38,8 @@ export const Subtitle = styled.h5`
     color: ${({ theme }: TTheme) => theme.color.darkGrey};
 
     ${mixins.media.laptop`
-    margin: 0 0 28px;
-  `}
+        margin: 0 0 28px;
+    `}
 `;
 
 export const Card = styled.div`
@@ -56,12 +57,12 @@ export const Card = styled.div`
 
     /* stylelint-disable-next-line order/order */
     ${mixins.media.laptop`
-    padding: 36px 0 40px;
+        padding: 36px 0 40px;
 
-    :not(:last-child) {
-      margin-right: 16px;
-    }
-  `}
+        :not(:last-child) {
+        margin-right: 16px;
+        }
+    `}
 `;
 
 export const CardTitle = styled.h3`
@@ -79,7 +80,7 @@ export const CardItem = styled.div`
     }
 `;
 
-export const Logo = styled.div`
+export const Logo = styled(Image)`
     width: auto;
     margin-bottom: 24px;
     color: ${({ theme }: TTheme) => theme.color.white};
@@ -91,19 +92,19 @@ export const Stories = styled.div`
     grid-template-columns: 1fr;
 
     ${mixins.media.laptop`
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 12px;
-  `}
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 12px;
+    `}
 `;
 
-export const StoryLogo = styled.div`
+export const StoryLogo = styled(Image)`
     display: block;
     width: auto;
     margin: 0 auto 20px;
 
     ${mixins.media.laptop`
-    margin: 0 auto 28px;
-  `}
+        margin: 0 auto 28px;
+    `}
 `;
 
 export const SeeMore = styled.div`

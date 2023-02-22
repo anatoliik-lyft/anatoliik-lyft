@@ -1,5 +1,4 @@
 import React from 'react';
-import { CSSTransition } from 'react-transition-group';
 
 import * as S from './style';
 import { MODAL_ID } from '../Modal';
@@ -320,11 +319,11 @@ class Dropdown extends React.Component<TProps, IState> {
                 <Head {...this.getHandlers()} ref={this.headRef}>
                     {this.renderHead()}
                 </Head>
-                <CSSTransition in={isOpen} unmountOnExit classNames="appear-bottom" timeout={400}>
+                {isOpen && (
                     <Overlay ref={this.overlayRef} style={position} {...this.getOverlayHandlers()}>
                         {this.renderOverlay()}
                     </Overlay>
-                </CSSTransition>
+                )}
             </S.Root>
         );
     }

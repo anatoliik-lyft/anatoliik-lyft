@@ -61,7 +61,7 @@
         }
     },
     "Components": {
-        "Header": {
+        "header": {
             "skills": "Skills",
             "experience": "Experience",
             "articles": "Articles",
