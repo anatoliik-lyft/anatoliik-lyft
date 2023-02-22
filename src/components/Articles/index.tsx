@@ -8,18 +8,18 @@ import Habr from './Habr';
 import * as S from './style';
 import Medium from './Medium';
 import LeetCode from './LeetCode';
+import habrIcon from './icons/habr.svg';
 import mediumIcon from './icons/medium.svg';
 import leetcodeIcon from './icons/leetcode.svg';
-import habrIcon from './icons/habr.svg';
+import habrModalIcon from './icons/habr-modal.svg';
+import leetcodeModalIcon from './icons/leetcode-modal.svg';
 
 export const id = 'articles';
 
 const cards = [
-  /* eslint-disable prettier/prettier */
-  {id: 'medium',  color: '#000000', bgColor: '#FFFFFF', src: mediumIcon},
-  {id: 'leetcode',  color: '#ffffff', bgColor: '#3C4859', src: leetcodeIcon},
-  {id: 'habr',  color: '#ffffff', bgColor: '#333333', src: habrIcon},
-  /* eslint-enable prettier/prettier */
+    { id: 'medium', color: '#000000', bgColor: '#FFFFFF', src: mediumIcon },
+    { id: 'leetcode', color: '#ffffff', bgColor: '#3C4859', src: leetcodeIcon },
+    { id: 'habr', color: '#ffffff', bgColor: '#333333', src: habrIcon },
 ];
 
 const Articles = () => {
@@ -59,8 +59,8 @@ const Articles = () => {
         /* eslint-enable react/jsx-key */
         const logoMap = new Map([
             ['medium', mediumIcon],
-            ['leetcode', leetcodeIcon],
-            ['habr', habrIcon],
+            ['leetcode', leetcodeModalIcon],
+            ['habr', habrModalIcon],
         ]);
 
         return (
