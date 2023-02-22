@@ -17,7 +17,7 @@ const About = () => {
                         <S.Item key={item}>{t(`about.${item}`)}</S.Item>
                     ))}
                 </S.List>
-                <S.Download target="_blank" href="/public/docs/a.kurochkin.cv.pdf">
+                <S.Download target="_blank" href="/docs/a.kurochkin.cv.pdf">
                     {t('about.download')}
                 </S.Download>
             </S.Container>

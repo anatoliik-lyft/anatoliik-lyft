@@ -61,7 +61,7 @@
         }
     },
     "Components": {
-        "Header": {
+        "header": {
             "skills": "Навыки",
             "experience": "Опыт работы",
             "articles": "Статьи",

@@ -1,8 +1,6 @@
 import React from 'react';
-import { StyledComponent, ThemeContext } from 'styled-components';
-import CSSTransition from 'react-transition-group/CSSTransition';
+import { StyledComponent } from 'styled-components';
 
-import { TTheme } from '@/styles';
 import closeIcon from '@/icons/close.svg';
 
 import * as S from './style';
@@ -39,24 +37,18 @@ const Drawer: React.FC<IOwnProps> = ({
     const renderCloseButton = (): React.ReactNode =>
         withoutCloseButton ? null : <S.CloseIcon src={closeIcon} alt="Close" onClick={onClose} />;
 
-    const theme: TTheme['theme'] = React.useContext(ThemeContext);
-
-    return (
-        <CSSTransition appear in={open} unmountOnExit classNames="fade" timeout={theme.transition.duration}>
-            <S.Modal onClose={onClose}>
-                <CSSTransition enter in={open} unmountOnExit classNames="appear" timeout={theme.transition.duration}>
-                    <WindowComponent
-                        role="button"
-                        anchor={anchor}
-                        onMouseDown={(e: React.SyntheticEvent) => e.stopPropagation()}
-                    >
-                        {renderCloseButton()}
-                        {children}
-                    </WindowComponent>
-                </CSSTransition>
-            </S.Modal>
-        </CSSTransition>
-    );
+    return open ? (
+        <S.Modal onClose={onClose}>
+            <WindowComponent
+                role="button"
+                anchor={anchor}
+                onMouseDown={(e: React.SyntheticEvent) => e.stopPropagation()}
+            >
+                {renderCloseButton()}
+                {children}
+            </WindowComponent>
+        </S.Modal>
+    ) : null;
 };
 
 interface IHeaderProps {

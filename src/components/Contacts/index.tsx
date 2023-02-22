@@ -5,16 +5,18 @@ import logoIcon from '@/icons/logo.svg';
 
 import * as S from './style';
 import faceImageSrc from './images/face.png';
+import githubIcon from './icons/github.svg';
+import linkedinIcon from './icons/linkedin.svg';
+import instagramIcon from './icons/instagram.svg';
+import facebookIcon from './icons/facebook.svg';
 
 export const id = 'contacts';
 
 const socialMediaList = [
-  /* eslint-disable prettier/prettier */
-  {id: 'github', LogoIcon: require(`./icons/github.svg`), url: 'https://github.com/anatoliy8493'},
-  {id: 'linkedin', LogoIcon: require(`./icons/linkedin.svg`), url: 'https://www.linkedin.com/in/anatolii-kurochkin/'},
-  {id: 'instagram', LogoIcon: require(`./icons/instagram.svg`), url: 'https://www.instagram.com/anatolii841993/'},
-  {id: 'facebook', LogoIcon: require(`./icons/facebook.svg`), url: 'https://www.facebook.com/anatolii841993'},
-  /* eslint-enable prettier/prettier */
+    { id: 'github', src: githubIcon, url: 'https://github.com/anatoliy8493' },
+    { id: 'linkedin', src: linkedinIcon, url: 'https://www.linkedin.com/in/anatolii-kurochkin/' },
+    { id: 'instagram', src: instagramIcon, url: 'https://www.instagram.com/anatolii841993/' },
+    { id: 'facebook', src: facebookIcon, url: 'https://www.facebook.com/anatolii841993' },
 ];
 
 const Contacts = () => {
@@ -27,9 +29,9 @@ const Contacts = () => {
                 <S.Card>
                     <S.Face src={faceImageSrc.src} />
                     <S.SocialMediaList>
-                        {socialMediaList.map(({ id, LogoIcon, url }) => (
+                        {socialMediaList.map(({ id, src, url }) => (
                             <S.SocialMedia key={id} href={url} target="_blank">
-                                <S.Logo as={LogoIcon} />
+                                <S.Logo src={src} alt="Logo" />
                             </S.SocialMedia>
                         ))}
                     </S.SocialMediaList>

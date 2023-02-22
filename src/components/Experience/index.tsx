@@ -3,21 +3,27 @@ import { useTranslations } from 'next-intl';
 
 import * as S from './style';
 import faceImageSrc from './images/face.png';
+import lyftIcon from './icons/lyft.svg';
+import callfromwebIcon from '../icons/callfromweb.svg';
+import ednaIcon from './icons/edna.svg';
+import ozonIcon from './icons/ozon.svg';
+import mailruIcon from './icons/mailru.svg';
+import onetwotripIcon from './icons/onetwotrip.svg';
+import deloitteIcon from './icons/deloitte.svg';
+import eyIcon from './icons/ey.svg';
 
 export const id = 'experience';
 
-const cards = [
-  /* eslint-disable prettier/prettier */
-  {id: 'lyft', logoIconSrc: require(`./icons/lyft.svg`)},
-  {id: 'callfromweb', logoIconSrc: require(`../icons/callfromweb.svg`)},
-  {id: 'face'},
-  {id: 'edna', logoIconSrc: require(`./icons/edna.svg`)},
-  {id: 'ozon', logoIconSrc: require(`./icons/ozon.svg`)},
-  {id: 'mailru', logoIconSrc: require(`./icons/mailru.svg`)},
-  {id: 'onetwotrip', logoIconSrc: require(`./icons/onetwotrip.svg`)},
-  {id: 'deloitte', logoIconSrc: require(`./icons/deloitte.svg`)},
-  {id: 'ey', logoIconSrc: require(`./icons/ey.svg`)},
-  /* eslint-enable prettier/prettier */
+const cards: Array<{ id: S.TLogoProps['name'] | 'face'; src: string }> = [
+    { id: 'lyft', src: lyftIcon },
+    { id: 'callfromweb', src: callfromwebIcon },
+    { id: 'face', src: '' },
+    { id: 'edna', src: ednaIcon },
+    { id: 'ozon', src: ozonIcon },
+    { id: 'mailru', src: mailruIcon },
+    { id: 'onetwotrip', src: onetwotripIcon },
+    { id: 'deloitte', src: deloitteIcon },
+    { id: 'ey', src: eyIcon },
 ];
 
 const Experience = () => {
@@ -28,7 +34,7 @@ const Experience = () => {
             <S.Container>
                 <S.Title>{t('workExperience.title')}</S.Title>
                 <S.Grid>
-                    {cards.map(({ id, logoIconSrc }) =>
+                    {cards.map(({ id, src }) =>
                         id === 'face' ? (
                             <S.FaceCard key={id}>
                                 <S.FaceImg src={faceImageSrc.src}></S.FaceImg>
@@ -37,7 +43,7 @@ const Experience = () => {
                             <S.Card key={id}>
                                 <S.Header>
                                     <S.LogoWrapper>
-                                        <S.Logo name={id} as={logoIconSrc} />
+                                        <S.Logo name={id} src={src} alt="Company logo" />
                                     </S.LogoWrapper>
                                     <S.Description>{t(`workExperience.${id}Description`)}</S.Description>
                                 </S.Header>

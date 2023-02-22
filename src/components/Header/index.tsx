@@ -41,7 +41,7 @@ const Header = () => {
                     <S.MobileMenu>
                         {NAVIGATION_LIST.map((item) => (
                             <S.NavigationItem onClick={handleClick} href={`#${item}`} key={item}>
-                                {t(`Header.${item}`)}
+                                {t(`header.${item}`)}
                             </S.NavigationItem>
                         ))}
                     </S.MobileMenu>
@@ -51,7 +51,7 @@ const Header = () => {
                 <S.Navigation>
                     {NAVIGATION_LIST.map((item) => (
                         <S.NavigationItem onClick={handleClick} href={`#${item}`} key={item}>
-                            {t(`Header.${item}`)}
+                            {t(`header.${item}`)}
                         </S.NavigationItem>
                     ))}
                 </S.Navigation>

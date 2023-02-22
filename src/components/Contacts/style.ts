@@ -8,8 +8,8 @@ export const Contacts = styled.section`
     background-color: ${({ theme }: TTheme) => theme.color.lightBlue};
 
     ${mixins.media.laptop`
-    padding: 40px 0 26px;
-  `}
+      padding: 40px 0 26px;
+    `}
 `;
 
 export const Container = styled.div`
@@ -24,8 +24,8 @@ export const LogoIcon = styled(Image)`
 
     ${mixins.media.laptop`
     ${mixins.wh('42px')}
-    margin: 0 auto 20px;
-  `}
+      margin: 0 auto 20px;
+    `}
 `;
 
 export const Card = styled.div`
@@ -52,8 +52,8 @@ export const Copyright = styled.div`
     text-align: center;
 
     ${mixins.media.laptop`
-    margin-top: 24px;
-  `}
+      margin-top: 24px;
+    `}
 `;
 
 export const SocialMediaList = styled.div`
@@ -62,7 +62,7 @@ export const SocialMediaList = styled.div`
     margin: 0 auto;
 `;
 
-export const Logo = styled.div`
+export const Logo = styled(Image)`
     ${mixins.wh('24px')}
 
     ${mixins.media.laptop`

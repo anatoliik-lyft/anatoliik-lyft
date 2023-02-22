@@ -8,14 +8,17 @@ import Habr from './Habr';
 import * as S from './style';
 import Medium from './Medium';
 import LeetCode from './LeetCode';
+import mediumIcon from './icons/medium.svg';
+import leetcodeIcon from './icons/leetcode.svg';
+import habrIcon from './icons/habr.svg';
 
 export const id = 'articles';
 
 const cards = [
   /* eslint-disable prettier/prettier */
-  {id: 'medium',  color: '#000000', bgColor: '#FFFFFF', logoIconSrc: require(`./icons/medium.svg`)},
-  {id: 'leetcode',  color: '#ffffff', bgColor: '#3C4859', logoIconSrc: require(`./icons/leetcode.svg`)},
-  {id: 'habr',  color: '#ffffff', bgColor: '#333333', logoIconSrc: require(`./icons/habr.svg`)},
+  {id: 'medium',  color: '#000000', bgColor: '#FFFFFF', src: mediumIcon},
+  {id: 'leetcode',  color: '#ffffff', bgColor: '#3C4859', src: leetcodeIcon},
+  {id: 'habr',  color: '#ffffff', bgColor: '#333333', src: habrIcon},
   /* eslint-enable prettier/prettier */
 ];
 
@@ -55,15 +58,15 @@ const Articles = () => {
         ]);
         /* eslint-enable react/jsx-key */
         const logoMap = new Map([
-            ['medium', require(`./icons/medium.svg`)],
-            ['habr', require(`./icons/habr.svg`)],
-            ['leetcode', require(`./icons/leetcode.svg`)],
+            ['medium', mediumIcon],
+            ['leetcode', leetcodeIcon],
+            ['habr', habrIcon],
         ]);
 
         return (
             <Dialog onClose={() => setDialogVisible(false)} open={dialogVisible}>
                 <DialogContent>
-                    <S.StoryLogo as={activeDialog ? logoMap.get(activeDialog) : null} />
+                    <S.StoryLogo src={activeDialog ? logoMap.get(activeDialog) : null} alt="Logo" />
                     {activeDialog ? siteMap.get(activeDialog) : null}
                 </DialogContent>
             </Dialog>
@@ -77,7 +80,7 @@ const Articles = () => {
                     <S.Title>{t('articles.title')}</S.Title>
                     <S.Subtitle>{t('articles.subtitle')}</S.Subtitle>
                     <div className="glider" id="glider-articles">
-                        {cards.map(({ id, bgColor, logoIconSrc, color }) => (
+                        {cards.map(({ id, bgColor, src, color }) => (
                             <S.Card
                                 key={id}
                                 onClick={() => {
@@ -86,7 +89,7 @@ const Articles = () => {
                                 }}
                                 style={{ backgroundColor: bgColor, color }}
                             >
-                                <S.Logo as={logoIconSrc} />
+                                <S.Logo src={src} alt="Article logo" />
                                 <S.SeeMore>{t('articles.seeMore')}</S.SeeMore>
                             </S.Card>
                         ))}

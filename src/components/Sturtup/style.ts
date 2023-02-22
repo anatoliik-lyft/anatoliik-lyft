@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import styled from 'styled-components';
 
 import { mixins, TTheme, hexToRgba } from '@/styles';
@@ -12,24 +13,24 @@ export const Sturtup = styled.section`
         content: '';
         ${mixins.position({ position: 'absolute', bottom: 0, left: 0 })}
         ${mixins.wh('100%', '168px')}
-    background-color: ${({ theme }: TTheme) => theme.color.white};
+        background-color: ${({ theme }: TTheme) => theme.color.white};
     }
 
     /* stylelint-disable-next-line order/order */
     ${mixins.media.laptop`
-    padding: 56px 0;
+      padding: 56px 0;
 
-    :after {
-      height: 204px;
-    }
-  `}
+      :after {
+        height: 204px;
+      }
+    `}
 `;
 
 export const Container = styled.div`
     ${mixins.container}
 `;
 
-export const Logo = styled.div`
+export const Logo = styled(Image)`
     ${mixins.wh('181px', '26px')}
 
     ${mixins.media.laptop`
@@ -47,8 +48,8 @@ export const Card = styled.div`
     box-shadow: 0 2px 15px ${({ theme }: TTheme) => hexToRgba(theme.color.lightGrey, 0.2)};
 
     ${mixins.media.laptop`
-    padding: 40px 16px;
-  `}
+      padding: 40px 16px;
+    `}
 `;
 
 export const Divider = styled.div`
@@ -62,7 +63,7 @@ export const Divider = styled.div`
     opacity: 0.5;
 
     ${mixins.media.laptop`
-    margin: 24px auto;
+      margin: 24px auto;
     `}
 `;
 
@@ -73,8 +74,8 @@ export const Description = styled.div`
     opacity: 0.7;
 
     ${mixins.media.laptop`
-    margin-bottom: 28px;
-  `}
+      margin-bottom: 28px;
+    `}
 `;
 
 export const Title = styled.h2`
@@ -83,15 +84,15 @@ export const Title = styled.h2`
     text-align: center;
 
     ${mixins.media.laptop`
-    margin: 0 0 28px;
-  `}
+      margin: 0 0 28px;
+    `}
 `;
 
 export const Link = styled.a`
     ${mixins.flexAlign('center')}
     ${mixins.wh('100%', '50px')}
-  ${mixins.font('14px', '16px', 700)}
-  border-radius: 2px;
+    ${mixins.font('14px', '16px', 700)}
+    border-radius: 2px;
     letter-spacing: 1.5px;
     text-transform: uppercase;
     text-decoration: none;
@@ -99,7 +100,7 @@ export const Link = styled.a`
     color: ${({ theme }: TTheme) => theme.color.white};
 
     ${mixins.media.laptop`
-    width: 248px;
-    margin: 0 auto;
-  `}
+      width: 248px;
+      margin: 0 auto;
+    `}
 `;
