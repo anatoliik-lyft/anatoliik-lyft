@@ -1,0 +1,72 @@
+{
+    "Index": {
+        "main": {
+            "title": "Ingeniero de software senior",
+            "subtitle": "Anatolii Kurochkin"
+        },
+        "about": {
+            "title": "¡Hola, soy Anatolii!",
+            "l1": "— 5+ años de experiencia en ingeniería de software",
+            "l2": "— Experiencia en optimizaciones del lado del cliente",
+            "l3": "— Reconocido por USCIS como una persona con habilidades extraordinarias en el campo profesional (poseedor de visa O-1)",
+            "l4": "— Cofundador de CallFromWeb. Ganador del segundo lugar de 1000 aplicaciones en el concurso EY Digital Wave",
+            "l5": "— Escribo artículos sobre emocionantes tecnologías y algoritmos de Front-End en Medium",
+            "download": "descargar cv"
+        },
+        "skills": {
+            "title": "Habilidades",
+            "languages": "Lenguajes",
+            "technologies": "Tecnologías",
+            "tools": "Herramientas"
+        },
+        "workExperience": {
+            "title": "Experiencia laboral",
+            "lyftDescription": "Mejorando la vida de las personas con el mejor transporte del mundo",
+            "ednaDescription": "Proporciona mensajería empresarial y comunicaciones de chat",
+            "callfromwebDescription": "Centro de llamadas basado en la nube B2B\npara llamadas entrantes gratuitas",
+            "ozonDescription": "El primer y principal minorista en línea\nruso",
+            "mailruDescription": "Una de las tres compañías de Internet más grandes\nen Rusia",
+            "onetwotripDescription": "Uno de los servicios más grandes de Europa para la compra de vuelos y la reserva de hoteles en todo el mundo",
+            "deloitteDescription": "La red de servicios profesionales más grande del mundo",
+            "eyDescription": "Una de las redes de servicios profesionales más grandes del mundo",
+            "lyftPosition": "Ingeniero de software senior",
+            "ednaPosition": "Ingeniero de software senior",
+            "callfromwebPosition": "Cofundador",
+            "ozonPosition": "Ingeniero de software senior",
+            "mailruPosition": "Ingeniero de software",
+            "onetwotripPosition": "Ingeniero de software",
+            "deloittePosition": "Desarrollador HTML",
+            "eyPosition": "Practicante de análisis de datos",
+            "lyftDates": "Sep 2021 - Presente",
+            "ednaDates": "Jul 2019 - May 2021",
+            "callfromwebDates": "Dec 2018 - Sep 2021",
+            "ozonDates": "Oct 2018 - Jul 2019",
+            "mailruDates": "Sep 2017 - Oct 2018",
+            "onetwotripDates": "Aug 2016 - Sep 2017",
+            "deloitteDates": "Sep 2015 - Aug 2016",
+            "eyDates": "Ene 2015 - Jun 2015"
+        },
+        "articles": {
+            "title": "Artículos",
+            "subtitle": "Echa un vistazo a mis artículos utilizando los enlaces a continuación",
+            "seeMore": "ver más"
+        },
+        "sturtup": {
+            "title": "Mi startup",
+            "button": "Pruébalo gratis",
+            "description": "Centro de llamadas en la nube.\nLlamadas en línea desde el sitio sin línea telefónica. Solo navegador."
+        },
+        "contacts": {
+            "copyright": "Hecho por mi :)"
+        }
+    },
+    "Components": {
+        "header": {
+            "skills": "Habilidades",
+            "experience": "Experiencia",
+            "articles": "Artículos",
+            "startup": "Mi startup",
+            "contacts": "Contactos"
+        }
+    }
+}

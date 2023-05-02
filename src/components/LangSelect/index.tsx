@@ -3,6 +3,7 @@ import { useRouter } from 'next/router';
 
 import * as S from './style';
 import ruIcon from './icons/ru.svg';
+import esIcon from './icons/es.svg';
 import enIcon from './icons/en.svg';
 
 type TOwnProps = {
@@ -14,14 +15,16 @@ type TProps = TOwnProps;
 const iconMap = new Map([
     ['en', enIcon],
     ['ru', ruIcon],
+    ['es', esIcon],
 ]);
 
 const langName = new Map([
     ['en', 'English'],
+    ['es', 'Español'],
     ['ru', 'Русский'],
 ]);
 
-const languages = ['en', 'ru'];
+const languages = [...langName.keys()];
 
 const LangSelect: React.FC<TProps> = ({ className }) => {
     const router = useRouter();
