@@ -1,0 +1,72 @@
+{
+    "Index": {
+        "main": {
+            "title": "Senior Softwareingenieur",
+            "subtitle": "Anatolii Kurochkin"
+        },
+        "about": {
+            "title": "Hallo, ich bin Anatolii!",
+            "l1": "— 5+ Jahre Erfahrung in der Softwareentwicklung",
+            "l2": "— Erfahrung in der Optimierung von Client-Seiten",
+            "l3": "— Anerkannt von USCIS als Person mit außergewöhnlichen Fähigkeiten im Berufsfeld (Inhaber eines O-1-Visums)",
+            "l4": "— Mitbegründer von CallFromWeb. Gewinner des 2. Platzes von 1000 Bewerbungen beim EY Digital Wave Contest",
+            "l5": "— Ich schreibe Artikel über aufregende Front-End-Technologien und Algorithmen auf Medium",
+            "download": "cv herunterladen"
+        },
+        "skills": {
+            "title": "Fähigkeiten",
+            "languages": "Sprachen",
+            "technologies": "Technologien",
+            "tools": "Werkzeuge"
+        },
+        "workExperience": {
+            "title": "Berufserfahrung",
+            "lyftDescription": "Verbesserung des Lebens der Menschen durch die beste Transportmöglichkeit der Welt",
+            "ednaDescription": "Bietet Unternehmensnachrichten und Chat-Kommunikation",
+            "callfromwebDescription": "B2B Cloud-basiertes Callcenter\nfür kostenlose eingehende Anrufe",
+            "ozonDescription": "Der erste und führende\nrussische Online-Händler",
+            "mailruDescription": "Eines der drei größten Internetunternehmen\nin Russland",
+            "onetwotripDescription": "Einer der größten Dienstleister in Europa für den Kauf von Flügen und die Buchung von Hotels weltweit",
+            "deloitteDescription": "Das größte professionelle Dienstleistungsnetzwerk der Welt",
+            "eyDescription": "Eines der größten professionellen Dienstleistungsnetzwerke der Welt",
+            "lyftPosition": "Senior Software Ingenieur",
+            "ednaPosition": "Senior Software Ingenieur",
+            "callfromwebPosition": "Mitbegründer",
+            "ozonPosition": "Senior Software Ingenieur",
+            "mailruPosition": "Software Ingenieur",
+            "onetwotripPosition": "Software Ingenieur",
+            "deloittePosition": "HTML-Entwickler",
+            "eyPosition": "Datenanalyse-Praktikant",
+            "lyftDates": "Sep 2021 - heute",
+            "ednaDates": "Jul 2019 - Mai 2021",
+            "callfromwebDates": "Dez 2018 - Sep 2021",
+            "ozonDates": "Okt 2018 - Jul 2019",
+            "mailruDates": "Sep 2017 - Okt 2018",
+            "onetwotripDates": "Aug 2016 - Sep 2017",
+            "deloitteDates": "Sep 2015 - Aug 2016",
+            "eyDates": "Jan 2015 - Jun 2015"
+        },
+        "articles": {
+            "title": "Artikel",
+            "subtitle": "Schauen Sie sich meine Artikel mit den unten stehenden Links an",
+            "seeMore": "mehr anzeigen"
+        },
+        "sturtup": {
+            "title": "Mein Startup",
+            "button": "Jetzt kostenlos testen",
+            "description": "Cloud-Callcenter.\nOnline-Anruf von der Website ohne Telefonleitung. Nur Browser."
+        },
+        "contacts": {
+            "copyright": "Erstellt von mir"
+        }
+    },
+    "Components": {
+        "header": {
+            "skills": "Fähigkeiten",
+            "experience": "Erfahrung",
+            "articles": "Artikel",
+            "startup": "Mein Startup",
+            "contacts": "Kontakte"
+        }
+    }
+}

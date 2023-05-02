@@ -2,9 +2,10 @@ import React from 'react';
 import { useRouter } from 'next/router';
 
 import * as S from './style';
-import ruIcon from './icons/ru.svg';
-import esIcon from './icons/es.svg';
 import enIcon from './icons/en.svg';
+import esIcon from './icons/es.svg';
+import deIcon from './icons/de.svg';
+import ruIcon from './icons/ru.svg';
 
 type TOwnProps = {
     className?: string;
@@ -14,13 +15,15 @@ type TProps = TOwnProps;
 
 const iconMap = new Map([
     ['en', enIcon],
-    ['ru', ruIcon],
     ['es', esIcon],
+    ['de', deIcon],
+    ['ru', ruIcon],
 ]);
 
 const langName = new Map([
     ['en', 'English'],
     ['es', 'Español'],
+    ['de', 'Deutsch'],
     ['ru', 'Русский'],
 ]);
 
