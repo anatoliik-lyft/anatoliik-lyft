@@ -1,5 +1,5 @@
 <h1>
-    Hi there, I'm Anatolii 👋 <img align="right" src="https://gpvc.arturio.dev/anatoliik-lyft" alt="Profile views">
+    Hi there, I'm Anatolii 👋
 </h1>
 
 ## About Me
