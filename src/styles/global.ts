@@ -1,7 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
 
-import { TTheme } from 'src/styles';
-
 export default createGlobalStyle`
   ${require('glider-js/glider.min.css').default}
   @font-face {
@@ -42,8 +40,8 @@ export default createGlobalStyle`
     font-family: 'Sansation', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    color: ${({ theme }: TTheme) => theme.color.black};
-    background-color: ${({ theme }: TTheme) => theme.color.white}
+    color: ${({ theme }) => theme.color.black};
+    background-color: ${({ theme }) => theme.color.white}
   }
 
   * {

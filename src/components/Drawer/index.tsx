@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyledComponent } from 'styled-components';
+import { IStyledComponent } from 'styled-components';
 
 import closeIcon from '@/icons/close.svg';
 
@@ -10,7 +10,7 @@ export interface IOwnProps {
     onClose?: () => void;
     children: React.ReactNode;
     withoutCloseButton?: boolean;
-    component?: StyledComponent<any, any, any>;
+    component?: IStyledComponent<any, any>;
     anchor?: 'top' | 'right' | 'bottom' | 'left';
 }
 
@@ -20,7 +20,7 @@ const Drawer: React.FC<IOwnProps> = ({
     children,
     anchor = 'bottom',
     withoutCloseButton = false,
-    component: WindowComponent = S.Window,
+    component: WindowComponent = S.Window as any,
 }) => {
     React.useEffect(() => {
         if (open) {

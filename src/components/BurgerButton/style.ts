@@ -38,10 +38,10 @@ const getOpenStyle = ({ open }: TProps) => {
     return css``;
 };
 
-export const Button = styled.div`
+export const Button = styled.div<TProps>`
     ${mixins.flexAlign('space-between', 'center')}
     ${mixins.wh('24px', '18px')}
-  flex-direction: column;
+    flex-direction: column;
     cursor: pointer;
 
     ::before,

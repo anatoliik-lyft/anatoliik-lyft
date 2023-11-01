@@ -1,5 +1,5 @@
 import React from 'react';
-import { css, CSSObject, SimpleInterpolation, FlattenSimpleInterpolation } from 'styled-components';
+import { css, CSSObject, Interpolation } from 'styled-components';
 
 import { TTheme } from './theme';
 import hexToRgba from './hexToRgba';
@@ -19,7 +19,7 @@ const breakpoints = {
 
 type TMedia = Record<
     keyof typeof breakpoints,
-    (first: TemplateStringsArray | CSSObject, ...interpolations: SimpleInterpolation[]) => FlattenSimpleInterpolation
+    (first: TemplateStringsArray | CSSObject, ...interpolations: Interpolation<any>[]) => Interpolation<any>
 >;
 
 export const media = (Object.keys(breakpoints) as (keyof typeof breakpoints)[]).reduce((acc: TMedia, label) => {
@@ -46,7 +46,7 @@ export const position = ({
     bottom?: CSSProperties['bottom'];
     left?: CSSProperties['left'];
     zIndex?: CSSProperties['zIndex'];
-}): SimpleInterpolation => css`
+}): Interpolation<any> => css`
     position: ${pos};
     top: ${top};
     right: ${right};
@@ -55,12 +55,12 @@ export const position = ({
     z-index: ${zIndex};
 `;
 
-export const wh = (width: CSSProperties['width'], height?: CSSProperties['height']): SimpleInterpolation => css`
+export const wh = (width: CSSProperties['width'], height?: CSSProperties['height']): Interpolation<any> => css`
     width: ${width};
     height: ${height || width};
 `;
 
-export const round = (size: CSSProperties['width'] | CSSProperties['height']): SimpleInterpolation => css`
+export const round = (size: CSSProperties['width'] | CSSProperties['height']): Interpolation<any> => css`
     ${wh(size)}
     overflow: hidden;
     border-radius: 50%;
@@ -69,7 +69,7 @@ export const round = (size: CSSProperties['width'] | CSSProperties['height']): S
 export const flexAlign = (
     mainAxis: CSSProperties['justifyContent'],
     crossAxis?: CSSProperties['alignItems'],
-): SimpleInterpolation => css`
+): Interpolation<any> => css`
     display: flex;
     justify-content: ${mainAxis};
     align-items: ${crossAxis || mainAxis};
@@ -79,7 +79,7 @@ export const font = (
     fontSize?: CSSProperties['fontSize'],
     lineHeight?: CSSProperties['lineHeight'],
     fontWeight?: CSSProperties['fontWeight'],
-): SimpleInterpolation => css`
+): Interpolation<any> => css`
     font-size: ${fontSize};
     line-height: ${lineHeight};
     font-weight: ${fontWeight};
