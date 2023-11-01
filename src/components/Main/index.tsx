@@ -13,7 +13,7 @@ const Main = () => {
                 <S.Title>{t('main.title')}</S.Title>
                 <S.Subtitle>{t('main.subtitle')}</S.Subtitle>
                 <S.Face>
-                    <S.FaceImg src={faceImage} alt="Avatar" />
+                    <S.FaceImg priority src={faceImage} alt="Avatar" />
                 </S.Face>
             </S.Container>
         </S.Main>
