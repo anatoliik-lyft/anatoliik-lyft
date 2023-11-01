@@ -29,10 +29,10 @@ enum EDimention {
     headerHeightDesktop = 'headerHeightDesktop',
 }
 
-type TColor = Record<keyof typeof EColor, string>;
-type TBreakpoint = Record<keyof typeof EBreakpoint, number>;
-type TTransition = Record<keyof typeof ETransition, number>;
-type TDimention = Record<keyof typeof EDimention, number>;
+export type TColor = Record<keyof typeof EColor, string>;
+export type TBreakpoint = Record<keyof typeof EBreakpoint, number>;
+export type TTransition = Record<keyof typeof ETransition, number>;
+export type TDimention = Record<keyof typeof EDimention, number>;
 
 export type TTheme = {
     theme: {

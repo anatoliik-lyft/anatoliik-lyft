@@ -29,7 +29,7 @@ const getSkeletonDoughnutStyle = ({ size, cutoutPercentage, theme }: TSkeletonDo
 const getSkeletonDefaultStyle = css`
     border-radius: 4px;
     overflow: hidden;
-    background-color: ${({ theme }: TTheme) => hexToRgba(theme.color.grey, 0.24)};
+    background-color: ${({ theme }) => hexToRgba(theme.color.grey, 0.24)};
     animation: ${blink} 1s ease-in-out infinite;
 `;
 

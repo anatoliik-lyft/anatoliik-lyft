@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import styled, { css } from 'styled-components';
 
-import { mixins, TTheme, hexToRgba } from '@/styles';
+import { mixins, hexToRgba } from '@/styles';
 
 export type TLogoProps = {
     name: 'lyft' | 'edna' | 'callfromweb' | 'ozon' | 'mailru' | 'onetwotrip' | 'deloitte' | 'ey';
@@ -75,35 +75,32 @@ const getLogoDimensions = ({ name }: TLogoProps) => {
 export const Experience = styled.section`
     position: relative;
     padding: 40px 0;
-    background-color: ${({ theme }: TTheme) => theme.color.lightBlue};
+    background-color: ${({ theme }) => theme.color.lightBlue};
 
-    /* stylelint-disable-next-line selector-pseudo-element-colon-notation */
-    :after {
+    &:after {
         content: '';
         ${mixins.position({ position: 'absolute', bottom: 0, left: 0, zIndex: 2 })}
         ${mixins.wh('100%', '142px')}
-    background-color: ${({ theme }: TTheme) => theme.color.white};
+        background-color: ${({ theme }) => theme.color.white};
     }
 
-    /* stylelint-disable-next-line selector-pseudo-element-colon-notation */
-    :before {
+    &:before {
         content: '';
         ${mixins.position({ position: 'absolute', bottom: '-40px', left: 0, zIndex: 1 })}
         ${mixins.wh('100%', '80px')}
         background: radial-gradient(
             50% 50% at 50% 50%,
-            ${({ theme }: TTheme) => theme.color.darkAccent} 0%,
-            ${({ theme }: TTheme) => hexToRgba(theme.color.darkAccent, 0)} 100%
+            ${({ theme }) => theme.color.darkAccent} 0%,
+            ${({ theme }) => hexToRgba(theme.color.darkAccent, 0)} 100%
         );
         opacity: 0.1;
     }
 
-    /* stylelint-disable-next-line order/order */
     ${mixins.media.laptop`
         padding: 56px 0;
 
-        :after {
-        height: 168px;
+        &:after {
+            height: 168px;
         }
     `}
 `;
@@ -139,13 +136,13 @@ export const Card = styled.div`
     flex-direction: column;
     height: 204px;
     padding: 0 8px 20px;
-    border: 1px solid ${({ theme }: TTheme) => theme.color.lightBlue};
+    border: 1px solid ${({ theme }) => theme.color.lightBlue};
     border-radius: 2px;
     overflow: hidden;
     text-align: center;
-    background-color: ${({ theme }: TTheme) => theme.color.white};
-    color: ${({ theme }: TTheme) => theme.color.black};
-    box-shadow: 0 2px 15px ${({ theme }: TTheme) => hexToRgba(theme.color.lightGrey, 0.2)};
+    background-color: ${({ theme }) => theme.color.white};
+    color: ${({ theme }) => theme.color.black};
+    box-shadow: 0 2px 15px ${({ theme }) => hexToRgba(theme.color.lightGrey, 0.2)};
 
     ${mixins.media.laptop`
         height: 228px;
@@ -201,7 +198,7 @@ export const Description = styled.div`
 export const Divider = styled.div`
     ${mixins.wh('86.5%', '1px')}
     margin: 0 auto;
-    background-color: ${({ theme }: TTheme) => theme.color.lightBlue};
+    background-color: ${({ theme }) => theme.color.lightBlue};
     opacity: 0.5;
 `;
 

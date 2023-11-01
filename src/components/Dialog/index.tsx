@@ -1,7 +1,6 @@
 import React from 'react';
-import { StyledComponent, ThemeContext } from 'styled-components';
+import { IStyledComponent } from 'styled-components';
 
-import { TTheme } from '@/styles';
 import closeIcon from '@/icons/close.svg';
 
 import * as S from './style';
@@ -10,7 +9,7 @@ export interface IOwnProps {
     open?: boolean;
     children: React.ReactNode;
     withoutCloseButton?: boolean;
-    component?: StyledComponent<any, any, any>;
+    component?: IStyledComponent<any, any>;
     onClose?: (e: React.SyntheticEvent) => void;
 }
 
@@ -39,8 +38,6 @@ const Dialog: React.FC<IOwnProps> = ({
                 <S.CloseIcon src={closeIcon} alt="Close" />
             </S.Close>
         );
-
-    const theme: TTheme['theme'] = React.useContext(ThemeContext);
 
     return open ? (
         <S.Modal onClose={onClose}>

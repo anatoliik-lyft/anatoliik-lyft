@@ -72,9 +72,9 @@ const getWindowStyles = ({ anchor, theme }: TWindowProps) => {
     }
 };
 
-export const Window = styled.div`
+export const Window = styled.div<TWindowProps>`
     position: relative;
-    background-color: ${({ theme }: TWindowProps) => theme.color.accent};
+    background-color: ${({ theme }) => theme.color.accent};
     ${getWindowLayout}
     ${getWindowStyles}
 `;
@@ -82,7 +82,7 @@ export const Window = styled.div`
 export const Header = styled.div`
     position: relative;
     padding: 20px;
-    color: ${({ theme }: TTheme) => theme.color.accent};
+    color: ${({ theme }) => theme.color.accent};
 `;
 
 export const HeaderContent = styled.div`
@@ -94,13 +94,13 @@ export const Title = styled.div`
     ${mixins.h1}
     margin: 0;
     padding-right: 32px;
-    color: ${({ theme }: TTheme) => theme.color.accent};
+    color: ${({ theme }) => theme.color.accent};
 `;
 
 export const Subtitle = styled.div`
     ${mixins.h2}
     margin: 20px 0 0;
-    color: ${({ theme }: TTheme) => theme.color.accent};
+    color: ${({ theme }) => theme.color.accent};
 `;
 
 export const CloseIcon = styled(Image)`
@@ -109,10 +109,10 @@ export const CloseIcon = styled(Image)`
     cursor: pointer;
 `;
 
-export const Scrollable = styled.div`
+export const Scrollable = styled.div<IScrollableProps>`
     flex: auto;
     overflow: auto;
-    border-radius: 0 0 ${({ rounded = false }: IScrollableProps) => (rounded ? '8px 8px' : '0 0')};
+    border-radius: 0 0 ${({ rounded = false }) => (rounded ? '8px 8px' : '0 0')};
 `;
 
 export const Content = styled.div`
@@ -127,13 +127,13 @@ export const Modal = styled(BaseModal)`
     }
     &.fade-enter-active {
         opacity: 1;
-        transition: opacity ${({ theme }: TTheme) => theme.transition.duration}ms;
+        transition: opacity ${({ theme }) => theme.transition.duration}ms;
     }
     &.fade-exit {
         opacity: 1;
     }
     &.fade-exit-active {
         opacity: 0;
-        transition: opacity ${({ theme }: TTheme) => theme.transition.duration}ms;
+        transition: opacity ${({ theme }) => theme.transition.duration}ms;
     }
 `;

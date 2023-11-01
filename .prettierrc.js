@@ -4,4 +4,12 @@ module.exports = {
     semi: true,
     singleQuote: true,
     tabWidth: 4,
+    overrides: [
+        {
+            files: ['*.yaml', '*.yml', '*.json', '.babelrc'],
+            options: {
+                tabWidth: 2,
+            },
+        },
+    ],
 };

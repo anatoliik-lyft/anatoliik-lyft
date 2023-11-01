@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 
-import { TTheme } from '@/styles';
 import hexToRgba from 'src/styles/hexToRgba';
 
 export const Root = styled.div`
@@ -13,7 +12,7 @@ export const Overlay = styled.div`
     position: absolute;
     z-index: 1;
     border-radius: 4px;
-    box-shadow: 1px 1px 9px ${({ theme }: TTheme) => hexToRgba(theme.color.black, 0.12)};
+    box-shadow: 1px 1px 9px ${({ theme }) => hexToRgba(theme.color.black, 0.12)};
 
     &.appear-bottom-enter {
         transform: translateY(10px);
@@ -22,7 +21,7 @@ export const Overlay = styled.div`
     &.appear-bottom-enter-active {
         transform: translateY(0);
         opacity: 1;
-        transition: all ${({ theme }: TTheme) => theme.transition.duration}ms;
+        transition: all ${({ theme }) => theme.transition.duration}ms;
     }
     &.appear-bottom-exit {
         transform: translateY(0);
@@ -31,7 +30,7 @@ export const Overlay = styled.div`
     &.appear-bottom-exit-active {
         transform: translateY(10px);
         opacity: 0;
-        transition: all ${({ theme }: TTheme) => theme.transition.duration}ms;
+        transition: all ${({ theme }) => theme.transition.duration}ms;
     }
 `;
 

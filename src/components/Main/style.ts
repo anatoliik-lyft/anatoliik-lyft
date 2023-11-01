@@ -1,7 +1,7 @@
-import Image from 'next/image';
+import Image, { ImageProps } from 'next/image';
 import styled from 'styled-components';
 
-import { mixins, TTheme, hexToRgba } from '@/styles';
+import { mixins, hexToRgba } from '@/styles';
 
 export const BurgerButton = styled.div`
     ${mixins.position({ position: 'relative', zIndex: 2 })}
@@ -36,12 +36,12 @@ export const Subtitle = styled.div`
     margin-bottom: 20px;
     text-transform: uppercase;
     text-align: center;
-    color: ${({ theme }: TTheme) => theme.color.darkGrey};
+    color: ${({ theme }) => theme.color.darkGrey};
 
     ${mixins.media.laptop`
     ${mixins.font('18px', '20px')}
-    margin-bottom: 0;
-  `}
+        margin-bottom: 0;
+    `}
 `;
 
 export const Face = styled.div`
@@ -49,7 +49,7 @@ export const Face = styled.div`
     position: relative;
     margin: 0 auto;
 
-    ::before {
+    &::before {
         ${mixins.wh('212px', '54px')}
         ${mixins.position({
             position: 'absolute',
@@ -62,43 +62,42 @@ export const Face = styled.div`
         margin: auto;
         background: radial-gradient(
             50% 50% at 50% 50%,
-            ${({ theme }: TTheme) => hexToRgba(theme.color.darkGrey, 0.8)} 0%,
-            ${({ theme }: TTheme) => hexToRgba(theme.color.darkGrey, 0.65)} 29.69%,
-            ${({ theme }: TTheme) => hexToRgba(theme.color.darkGrey, 0.21)} 70.83%,
-            ${({ theme }: TTheme) => hexToRgba(theme.color.darkGrey, 0)} 100%
+            ${({ theme }) => hexToRgba(theme.color.darkGrey, 0.8)} 0%,
+            ${({ theme }) => hexToRgba(theme.color.darkGrey, 0.65)} 29.69%,
+            ${({ theme }) => hexToRgba(theme.color.darkGrey, 0.21)} 70.83%,
+            ${({ theme }) => hexToRgba(theme.color.darkGrey, 0)} 100%
         );
         transform: translate(-50%);
         opacity: 0.15;
     }
-    ::after {
+    &::after {
         ${mixins.wh('100vw', '127px')}
         ${mixins.position({ position: 'absolute', left: '50%', bottom: '-56px' })}
         content: '';
         display: block;
         background: radial-gradient(
             50% 50% at 50% 50%,
-            ${({ theme }: TTheme) => theme.color.darkAccent} 0%,
-            ${({ theme }: TTheme) => hexToRgba(theme.color.darkAccent, 0)} 100%
+            ${({ theme }) => theme.color.darkAccent} 0%,
+            ${({ theme }) => hexToRgba(theme.color.darkAccent, 0)} 100%
         );
         transform: translate(-50%);
         opacity: 0.15;
     }
 
-    /* stylelint-disable-next-line order/order */
     ${mixins.media.laptop`
     ${mixins.wh('274px', '300px')}
 
-    ::before {
+    &::before {
         ${mixins.wh('352px', '54px')}
     }
-    ::after {
+    &::after {
         ${mixins.wh('692px', '190px')}
         bottom: -60px;
     }
   `}
 `;
 
-export const FaceImg = styled(Image)`
+export const FaceImg = styled(Image)<ImageProps>`
     width: 100%;
     height: 100%;
 `;

@@ -8,7 +8,7 @@ const Medium: React.FC = () => {
         <S.Stories>
             {MEDIUM_ARTICLES.map(({ link, title, thumbnail }, index) => (
                 <S.Story href={link} target="_blank" key={index}>
-                    <S.StoryImg imageSrc={thumbnail} />
+                    <S.StoryImg $imageSrc={thumbnail} />
                     <S.StoryTitle>{title}</S.StoryTitle>
                 </S.Story>
             ))}
