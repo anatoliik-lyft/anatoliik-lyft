@@ -8,7 +8,7 @@ const LeetCode: React.FC = () => {
         <S.Stories>
             {LEETCODE_ARTICLES.map(({ link, title, thumbnail }) => (
                 <S.Story key={title} href={link} target="_blank">
-                    <S.StoryImg imageSrc={thumbnail} />
+                    <S.StoryImg $imageSrc={thumbnail} />
                     <S.StoryTitle>{title}</S.StoryTitle>
                 </S.Story>
             ))}

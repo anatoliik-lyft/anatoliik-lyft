@@ -82,7 +82,7 @@ export const Window = styled.div<TWindowProps>`
 export const Header = styled.div`
     position: relative;
     padding: 20px;
-    color: ${({ theme }: TTheme) => theme.color.accent};
+    color: ${({ theme }) => theme.color.accent};
 `;
 
 export const HeaderContent = styled.div`
@@ -94,13 +94,13 @@ export const Title = styled.div`
     ${mixins.h1}
     margin: 0;
     padding-right: 32px;
-    color: ${({ theme }: TTheme) => theme.color.accent};
+    color: ${({ theme }) => theme.color.accent};
 `;
 
 export const Subtitle = styled.div`
     ${mixins.h2}
     margin: 20px 0 0;
-    color: ${({ theme }: TTheme) => theme.color.accent};
+    color: ${({ theme }) => theme.color.accent};
 `;
 
 export const CloseIcon = styled(Image)`

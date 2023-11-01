@@ -9,9 +9,9 @@ type TProps = TTheme & {
 const lineStyle = css`
     ${mixins.wh('100%', '2px')}
     border-radius: 1px;
-    background-color: ${({ theme }: TTheme) => theme.color.lightGrey};
-    transition: opacity ${({ theme }: TTheme) => theme.transition.duration}ms ease-in-out,
-        transform ${({ theme }: TTheme) => theme.transition.duration}ms ease-in-out;
+    background-color: ${({ theme }) => theme.color.lightGrey};
+    transition: opacity ${({ theme }) => theme.transition.duration}ms ease-in-out,
+        transform ${({ theme }) => theme.transition.duration}ms ease-in-out;
 `;
 
 export const Line = styled.div`
@@ -44,13 +44,12 @@ export const Button = styled.div<TProps>`
     flex-direction: column;
     cursor: pointer;
 
-    ::before,
-    ::after {
+    &::before,
+    &::after {
         ${lineStyle}
         position: relative;
         content: '';
     }
 
-    /* stylelint-disable-next-line order/order */
     ${getOpenStyle}
 `;

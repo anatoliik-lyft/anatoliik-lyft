@@ -1,14 +1,14 @@
 import Image from 'next/image';
 import styled from 'styled-components';
 
-import { mixins, TTheme } from '@/styles';
+import { mixins } from '@/styles';
 
 export const Contacts = styled.section`
     padding: 40px 0 20px;
-    background-color: ${({ theme }: TTheme) => theme.color.lightBlue};
+    background-color: ${({ theme }) => theme.color.lightBlue};
 
     ${mixins.media.laptop`
-      padding: 40px 0 26px;
+        padding: 40px 0 26px;
     `}
 `;
 
@@ -20,17 +20,17 @@ export const LogoIcon = styled(Image)`
     ${mixins.wh('32px')}
     display: block;
     margin: 0 auto 16px;
-    color: ${({ theme }: TTheme) => theme.color.darkAccent};
+    color: ${({ theme }) => theme.color.darkAccent};
 
     ${mixins.media.laptop`
     ${mixins.wh('42px')}
-      margin: 0 auto 20px;
+        margin: 0 auto 20px;
     `}
 `;
 
 export const Card = styled.div`
     padding: 28px 16px;
-    border: 1px solid ${({ theme }: TTheme) => theme.color.accent};
+    border: 1px solid ${({ theme }) => theme.color.accent};
     text-align: center;
     border-radius: 2px;
 `;
@@ -40,8 +40,8 @@ export const Face = styled.img`
     margin-bottom: 20px;
 
     ${mixins.media.laptop`
-    ${mixins.wh('210px')}
-  `}
+        ${mixins.wh('210px')}
+    `}
 `;
 
 export const Copyright = styled.div`
@@ -52,7 +52,7 @@ export const Copyright = styled.div`
     text-align: center;
 
     ${mixins.media.laptop`
-      margin-top: 24px;
+        margin-top: 24px;
     `}
 `;
 
@@ -66,8 +66,8 @@ export const Logo = styled(Image)`
     ${mixins.wh('24px')}
 
     ${mixins.media.laptop`
-    ${mixins.wh('32px')}
-  `}
+        ${mixins.wh('32px')}
+    `}
 `;
 
 export const SocialMedia = styled.a``;

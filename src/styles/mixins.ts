@@ -1,7 +1,6 @@
 import React from 'react';
 import { css, CSSObject, Interpolation } from 'styled-components';
 
-import { TTheme } from './theme';
 import hexToRgba from './hexToRgba';
 
 type CSSProperties = React.CSSProperties;
@@ -90,8 +89,8 @@ export const h1 = css`
     letter-spacing: 1px;
 
     ${media.laptop`
-    ${font('45px', '50px')}
-  `}
+        ${font('45px', '50px')}
+    `}
 `;
 
 export const h2 = css`
@@ -99,8 +98,8 @@ export const h2 = css`
     letter-spacing: 1px;
 
     ${media.laptop`
-    ${font('30px', '34px')}
-  `}
+        ${font('30px', '34px')}
+    `}
 `;
 
 export const h3 = css`
@@ -126,9 +125,9 @@ export const container = css`
     padding-left: 12px;
 
     ${media.laptop`
-    padding-right: 40px;
-    padding-left: 40px;
-  `}
+        padding-right: 40px;
+        padding-left: 40px;
+    `}
 `;
 
 export const glider = css`
@@ -137,22 +136,20 @@ export const glider = css`
     }
     .glider-dot {
         margin: 0;
-        background-color: ${({ theme }: TTheme) => theme.color.lightBlue};
+        background-color: ${({ theme }) => theme.color.lightBlue};
 
-        /* stylelint-disable-next-line max-nesting-depth */
-        :not(:last-child) {
+        &:not(:last-child) {
             margin-right: 8px;
         }
     }
     .glider-dot.active {
-        background-color: ${({ theme }: TTheme) => theme.color.accent};
-        box-shadow: 0 0 10px ${({ theme }: TTheme) => hexToRgba(theme.color.accent, 0.5)};
+        background-color: ${({ theme }) => theme.color.accent};
+        box-shadow: 0 0 10px ${({ theme }) => hexToRgba(theme.color.accent, 0.5)};
     }
 
-    /* stylelint-disable-next-line order/order */
     ${media.laptop`
-    .glider-dots {
-      display: none;
-    }
-  `}
+        .glider-dots {
+            display: none;
+        }
+    `}
 `;

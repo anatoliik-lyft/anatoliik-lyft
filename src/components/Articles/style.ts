@@ -12,7 +12,7 @@ const getCardStyle = ({ theme }: TTheme) => css`
 export const Articles = styled.section`
     ${mixins.glider}
     padding: 40px 0;
-    background-color: ${({ theme }: TTheme) => theme.color.white};
+    background-color: ${({ theme }) => theme.color.white};
 
     ${mixins.media.laptop`
         padding: 56px 0;
@@ -35,7 +35,7 @@ export const Subtitle = styled.h5`
     margin: 0 0 24px;
     text-align: center;
     text-transform: uppercase;
-    color: ${({ theme }: TTheme) => theme.color.darkGrey};
+    color: ${({ theme }) => theme.color.darkGrey};
 
     ${mixins.media.laptop`
         margin: 0 0 28px;
@@ -51,16 +51,15 @@ export const Card = styled.div`
     overflow: hidden;
     ${getCardStyle};
 
-    :not(:last-child) {
+    &:not(:last-child) {
         margin-right: 12px;
     }
 
-    /* stylelint-disable-next-line order/order */
     ${mixins.media.laptop`
         padding: 36px 0 40px;
 
-        :not(:last-child) {
-        margin-right: 16px;
+        &:not(:last-child) {
+            margin-right: 16px;
         }
     `}
 `;
@@ -75,7 +74,7 @@ export const CardItem = styled.div`
     ${mixins.h4}
     opacity: 0.7;
 
-    :not(:last-child) {
+    &:not(:last-child) {
         margin-bottom: 12px;
     }
 `;
@@ -83,7 +82,7 @@ export const CardItem = styled.div`
 export const Logo = styled(Image)`
     width: auto;
     margin-bottom: 24px;
-    color: ${({ theme }: TTheme) => theme.color.white};
+    color: ${({ theme }) => theme.color.white};
 `;
 
 export const Stories = styled.div`
@@ -109,7 +108,7 @@ export const StoryLogo = styled(Image)`
 
 export const SeeMore = styled.div`
     ${mixins.h5}
-    border-bottom: 1px ${({ theme }: TTheme) => theme.color.lightGrey} dashed;
+    border-bottom: 1px ${({ theme }) => theme.color.lightGrey} dashed;
     text-transform: uppercase;
     cursor: pointer;
 `;
@@ -121,22 +120,22 @@ export const Story = styled.a`
 `;
 
 type TStoryImgProps = TTheme & {
-    imageSrc: string;
+    $imageSrc: string;
 };
 
 export const StoryImg = styled.img<TStoryImgProps>`
     ${mixins.wh('100%', '168px')}
-    background-image: url(${({ imageSrc }: TStoryImgProps) => imageSrc});
+    background-image: url(${({ $imageSrc }) => $imageSrc});
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
-    border: 1px solid ${({ theme }: TStoryImgProps) => theme.color.lightBlue};
-    box-shadow: 0 2px 15px ${({ theme }: TStoryImgProps) => hexToRgba(theme.color.lightGrey, 0.2)};
+    border: 1px solid ${({ theme }) => theme.color.lightBlue};
+    box-shadow: 0 2px 15px ${({ theme }) => hexToRgba(theme.color.lightGrey, 0.2)};
     border-radius: 2px;
 `;
 
 export const StoryTitle = styled.div`
     ${mixins.h4}
     margin-top: 12px;
-    color: ${({ theme }: TTheme) => theme.color.darkAccent};
+    color: ${({ theme }) => theme.color.darkAccent};
 `;
