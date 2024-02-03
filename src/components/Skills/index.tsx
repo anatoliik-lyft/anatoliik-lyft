@@ -40,7 +40,7 @@ const Skills = () => {
                 },
             ],
         });
-    }, []);
+    }, [theme.breakpoint.laptop]);
 
     return (
         <S.Skills id={id}>

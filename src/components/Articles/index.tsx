@@ -49,7 +49,7 @@ const Articles = () => {
                 },
             ],
         });
-    }, []);
+    }, [theme.breakpoint.laptop]);
 
     const renderActiveDialog = () => {
         /* eslint-disable react/jsx-key */

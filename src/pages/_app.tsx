@@ -4,15 +4,26 @@ import { useRouter } from 'next/router';
 import type { AppProps } from 'next/app';
 import { Normalize } from 'styled-normalize';
 import { SpeedInsights } from '@vercel/speed-insights/next';
-import { ThemeProvider } from 'styled-components';
+import styled, { css, ThemeProvider } from 'styled-components';
 import { NextIntlClientProvider } from 'next-intl';
 
 import theme from '@/styles/theme';
 import Header from '@/components/Header';
 
 import GlobalStyle from '@/styles/global';
+import { mixins, TTheme } from 'src/styles';
 
-import * as S from './styles';
+export const Main = styled.main`
+    ${({ theme }: TTheme) => {
+        return css`
+            padding-top: ${theme.dimention.headerHeightMobile}px;
+
+            ${mixins.media.laptop`
+                padding-top: ${theme.dimention.headerHeightDesktop}px;
+            `}
+        `;
+    }}
+`;
 
 export default function App({ Component, pageProps }: AppProps) {
     const { locale } = useRouter();
@@ -70,9 +81,9 @@ export default function App({ Component, pageProps }: AppProps) {
                     locale={locale}
                 >
                     <Header />
-                    <S.Main>
+                    <Main>
                         <Component {...pageProps} />
-                    </S.Main>
+                    </Main>
                 </NextIntlClientProvider>
             </ThemeProvider>
             <SpeedInsights />
