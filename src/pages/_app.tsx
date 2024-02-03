@@ -1,10 +1,11 @@
 import React from 'react';
 import Head from 'next/head';
+import { useRouter } from 'next/router';
 import type { AppProps } from 'next/app';
 import { Normalize } from 'styled-normalize';
-import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import { ThemeProvider } from 'styled-components';
-import { NextIntlProvider } from 'next-intl';
+import { NextIntlClientProvider } from 'next-intl';
 
 import theme from '@/styles/theme';
 import Header from '@/components/Header';
@@ -12,6 +13,7 @@ import Header from '@/components/Header';
 import GlobalStyle from '@/styles/global';
 
 export default function App({ Component, pageProps }: AppProps) {
+    const { locale } = useRouter();
     return (
         <>
             <Head>
@@ -50,7 +52,7 @@ export default function App({ Component, pageProps }: AppProps) {
             <ThemeProvider theme={theme}>
                 <Normalize />
                 <GlobalStyle />
-                <NextIntlProvider
+                <NextIntlClientProvider
                     formats={{
                         dateTime: {
                             short: {
@@ -63,12 +65,13 @@ export default function App({ Component, pageProps }: AppProps) {
                     messages={pageProps.i18n}
                     now={new Date(pageProps.now)}
                     timeZone="America/Los_Angeles"
+                    locale={locale}
                 >
                     <Header />
                     <Component {...pageProps} />
-                </NextIntlProvider>
+                </NextIntlClientProvider>
             </ThemeProvider>
-            <Analytics />
+            <SpeedInsights />
         </>
     );
 }
