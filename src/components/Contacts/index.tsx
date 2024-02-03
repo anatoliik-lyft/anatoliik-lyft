@@ -13,10 +13,10 @@ import facebookIcon from './icons/facebook.svg';
 export const id = 'contacts';
 
 const socialMediaList = [
-    { id: 'github', src: githubIcon, url: 'https://github.com/anatoliy8493' },
-    { id: 'linkedin', src: linkedinIcon, url: 'https://www.linkedin.com/in/anatolii-kurochkin/' },
-    { id: 'instagram', src: instagramIcon, url: 'https://www.instagram.com/anatolii841993/' },
-    { id: 'facebook', src: facebookIcon, url: 'https://www.facebook.com/anatolii841993' },
+    { id: 'github', src: githubIcon, url: 'https://github.com/anatoliik-lyft' },
+    { id: 'linkedin', src: linkedinIcon, url: 'https://www.linkedin.com/in/anatoliisf' },
+    { id: 'instagram', src: instagramIcon, url: 'https://www.instagram.com/anatoliisf' },
+    { id: 'facebook', src: facebookIcon, url: 'https://www.facebook.com/anatoliisf' },
 ];
 
 const Contacts = () => {
