@@ -1,6 +1,7 @@
 import React from 'react';
 import Glider from 'glider-js';
 import { useTranslations } from 'next-intl';
+import { withTheme, useTheme } from 'styled-components';
 
 import * as S from './style';
 import faceImgSrc from './images/face.png';
@@ -16,6 +17,7 @@ const cards = [
 ];
 
 const Skills = () => {
+    const theme = useTheme();
     const t = useTranslations('Index');
 
     React.useEffect(() => {
@@ -26,7 +28,7 @@ const Skills = () => {
             slidesToScroll: 1,
             responsive: [
                 {
-                    breakpoint: 1024,
+                    breakpoint: theme.breakpoint.laptop,
                     settings: {
                         draggable: false,
                         scrollLock: true,
@@ -38,7 +40,7 @@ const Skills = () => {
                 },
             ],
         });
-    }, []);
+    }, [theme.breakpoint.laptop]);
 
     return (
         <S.Skills id={id}>
@@ -61,4 +63,4 @@ const Skills = () => {
     );
 };
 
-export default Skills;
+export default withTheme(Skills);

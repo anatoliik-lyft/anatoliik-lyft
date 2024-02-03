@@ -1,7 +1,7 @@
 // import original module declarations
 import 'styled-components';
 
-import type { TTheme, TColor, TBreakpoint, TTransition, TDimention } from './src/styles/theme';
+import type { TTheme, TColor, TBreakpoint, TTransition, TDimention, TZIndex } from './src/styles/theme';
 
 // and extend them!
 declare module 'styled-components' {
@@ -10,5 +10,6 @@ declare module 'styled-components' {
         breakpoint: TBreakpoint;
         transition: TTransition;
         dimention: TDimention;
+        zIndex: TZIndex;
     }
 }

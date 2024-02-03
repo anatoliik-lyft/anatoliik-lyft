@@ -1,3 +1,5 @@
+import { breakpoints } from './mixins';
+
 enum EColor {
     accent = 'accent',
     darkAccent = 'darkAccent',
@@ -24,6 +26,12 @@ enum ETransition {
     duration = 'duration',
 }
 
+enum EZIndex {
+    header = 'header',
+    drawer = 'drawer',
+    modal = 'modal',
+}
+
 enum EDimention {
     headerHeightMobile = 'headerHeightMobile',
     headerHeightDesktop = 'headerHeightDesktop',
@@ -33,6 +41,7 @@ export type TColor = Record<keyof typeof EColor, string>;
 export type TBreakpoint = Record<keyof typeof EBreakpoint, number>;
 export type TTransition = Record<keyof typeof ETransition, number>;
 export type TDimention = Record<keyof typeof EDimention, number>;
+export type TZIndex = Record<keyof typeof EZIndex, number>;
 
 export type TTheme = {
     theme: {
@@ -40,6 +49,7 @@ export type TTheme = {
         breakpoint: TBreakpoint;
         transition: TTransition;
         dimention: TDimention;
+        zIndex: TZIndex;
     };
 };
 
@@ -54,22 +64,18 @@ const theme: TTheme['theme'] = {
         grey: '#9E9E9E',
         lightGrey: '#BDBDBD',
     },
-    breakpoint: {
-        mobileS: 320,
-        mobileM: 375,
-        mobileL: 425,
-        tablet: 768,
-        laptop: 1024,
-        laptopM: 1281,
-        laptopL: 1440,
-        fourK: 2560,
-    },
+    breakpoint: breakpoints,
     transition: {
         duration: 300,
     },
     dimention: {
         headerHeightMobile: 50,
         headerHeightDesktop: 80,
+    },
+    zIndex: {
+        header: 1100,
+        drawer: 1200,
+        modal: 1300,
     },
 };
 

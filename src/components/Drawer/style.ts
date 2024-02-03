@@ -104,7 +104,7 @@ export const Subtitle = styled.div`
 `;
 
 export const CloseIcon = styled(Image)`
-    ${mixins.position({ position: 'absolute', right: '20px', top: '28px', zIndex: 2 })}
+    ${mixins.position({ position: 'absolute', right: '20px', top: '28px' })}
     ${mixins.wh('16px')}
     cursor: pointer;
 `;

@@ -48,7 +48,7 @@ export const CloseIcon = styled(Image)`
 `;
 
 export const Close = styled.div`
-    ${mixins.position({ position: 'absolute', right: 0, top: 0, zIndex: 1 })}
+    ${mixins.position({ position: 'absolute', right: 0, top: 0 })}
     ${mixins.wh('48px')}
     ${mixins.flexAlign('center')}
     cursor: pointer;

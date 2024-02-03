@@ -1,6 +1,7 @@
 import React from 'react';
 import Glider from 'glider-js';
 import { useTranslations } from 'next-intl';
+import { withTheme, useTheme } from 'styled-components';
 
 import { Dialog, DialogContent } from '@/components';
 
@@ -23,9 +24,10 @@ const cards = [
 ];
 
 const Articles = () => {
+    const theme = useTheme();
+    const t = useTranslations('Index');
     const [activeDialog, setActiveDialog] = React.useState<string | null>(null);
     const [dialogVisible, setDialogVisible] = React.useState<boolean>(false);
-    const t = useTranslations('Index');
 
     React.useEffect(() => {
         new Glider(document.querySelector('#glider-articles') as HTMLElement, {
@@ -35,7 +37,7 @@ const Articles = () => {
             slidesToScroll: 1,
             responsive: [
                 {
-                    breakpoint: 1024,
+                    breakpoint: theme.breakpoint.laptop,
                     settings: {
                         draggable: false,
                         scrollLock: true,
@@ -47,7 +49,7 @@ const Articles = () => {
                 },
             ],
         });
-    }, []);
+    }, [theme.breakpoint.laptop]);
 
     const renderActiveDialog = () => {
         /* eslint-disable react/jsx-key */
@@ -102,4 +104,4 @@ const Articles = () => {
     );
 };
 
-export default Articles;
+export default withTheme(Articles);

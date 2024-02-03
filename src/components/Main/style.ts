@@ -7,7 +7,7 @@ export const BurgerButton = styled.div`
     ${mixins.position({ position: 'relative', zIndex: 2 })}
 `;
 
-export const Main = styled.main`
+export const Main = styled.div`
     padding: 40px 0 56px;
     overflow: hidden;
 

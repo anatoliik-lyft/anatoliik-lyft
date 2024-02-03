@@ -24,11 +24,16 @@ const getHeaderHeight = ({ theme }: TTheme) => {
     `;
 };
 
+const getHeaderPosition = ({ theme }: TTheme) => css`
+    ${mixins.position({ position: 'fixed', left: 0, top: 0, zIndex: theme.zIndex.header })}
+`;
+
 export const Header = styled.header`
     ${mixins.flexAlign('space-between', 'center')}
-    ${mixins.position({ position: 'relative' })}
-    background-color: ${({ theme }) => theme.color.white};
+    ${getHeaderPosition}
     ${getHeaderHeight}
+    width: 100%;
+    background-color: ${({ theme }) => theme.color.white};
 
     &::before {
         ${mixins.position({ position: 'absolute', top: 0, left: 0, zIndex: 1 })}
