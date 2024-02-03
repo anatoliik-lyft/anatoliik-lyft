@@ -5,7 +5,7 @@ import hexToRgba from './hexToRgba';
 
 type CSSProperties = React.CSSProperties;
 
-const breakpoints = {
+export const breakpoints = {
     mobileS: 320,
     mobileM: 375,
     mobileL: 425,
@@ -119,7 +119,7 @@ export const h5 = css`
 
 export const container = css`
     width: 100%;
-    max-width: 1024px;
+    max-width: ${({ theme }) => theme.breakpoint.laptop}px;
     margin: 0 auto;
     padding-right: 12px;
     padding-left: 12px;
