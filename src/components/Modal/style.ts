@@ -3,7 +3,9 @@ import styled, { css } from 'styled-components';
 import { mixins, TTheme } from '@/styles';
 
 const getTransition = ({ theme }: TTheme) => css`
-    transition: opacity ${theme.transition.duration}ms, z-index ${theme.transition.duration}ms;
+    transition:
+        opacity ${theme.transition.duration}ms,
+        z-index ${theme.transition.duration}ms;
 `;
 
 export const Modal = styled.div`

@@ -10,7 +10,8 @@ const lineStyle = css`
     ${mixins.wh('100%', '2px')}
     border-radius: 1px;
     background-color: ${({ theme }) => theme.color.lightGrey};
-    transition: opacity ${({ theme }) => theme.transition.duration}ms ease-in-out,
+    transition:
+        opacity ${({ theme }) => theme.transition.duration}ms ease-in-out,
         transform ${({ theme }) => theme.transition.duration}ms ease-in-out;
 `;
 
