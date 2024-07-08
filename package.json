@@ -10,27 +10,28 @@
     "lint:fix": "next lint --fix"
   },
   "dependencies": {
-    "@vercel/speed-insights": "^1.0.9",
+    "@vercel/speed-insights": "^1.0.12",
     "eslint": "8.56.0",
-    "eslint-config-next": "14.1.0",
-    "glider-js": "^1.7.8",
-    "next": "14.1.0",
-    "next-intl": "^3.5.4",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
+    "eslint-config-next": "14.2.4",
+    "glider-js": "^1.7.9",
+    "next": "14.2.4",
+    "next-intl": "^3.15.3",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
     "redux": "^5.0.1",
     "redux-thunk": "^3.1.0",
-    "styled-components": "^6.1.8",
-    "styled-normalize": "^8.1.0"
+    "sharp": "^0.33.4",
+    "styled-components": "^6.1.11",
+    "styled-normalize": "^8.1.1"
   },
   "devDependencies": {
     "@types/glider-js": "^1.7.11",
-    "@types/node": "^20.11.16",
-    "@types/react": "18.2.52",
-    "@types/react-dom": "^18.2.18",
+    "@types/node": "^20.14.10",
+    "@types/react": "18.3.3",
+    "@types/react-dom": "^18.3.0",
     "@types/styled-components": "^5.1.34",
-    "@typescript-eslint/eslint-plugin": "^6.20.0",
-    "@typescript-eslint/parser": "^6.20.0",
+    "@typescript-eslint/eslint-plugin": "^7.15.0",
+    "@typescript-eslint/parser": "^7.15.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.1.3"
   }

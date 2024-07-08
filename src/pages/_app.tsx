@@ -3,7 +3,7 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 import type { AppProps } from 'next/app';
 import { Normalize } from 'styled-normalize';
-import { SpeedInsights } from '@vercel/speed-insights/next';
+import { injectSpeedInsights } from '@vercel/speed-insights';
 import styled, { css, ThemeProvider } from 'styled-components';
 import { NextIntlClientProvider } from 'next-intl';
 
@@ -86,7 +86,8 @@ export default function App({ Component, pageProps }: AppProps) {
                     </Main>
                 </NextIntlClientProvider>
             </ThemeProvider>
-            <SpeedInsights />
         </>
     );
 }
+
+injectSpeedInsights();
