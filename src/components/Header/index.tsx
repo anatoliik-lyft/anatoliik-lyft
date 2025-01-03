@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import { withTheme, useTheme } from 'styled-components';
 
@@ -54,7 +55,9 @@ const Header = () => {
                     </S.MobileMenu>
                 </Drawer>
                 <S.BurgerButton open={barOpened} onClick={toggleDrawer} />
-                <S.LogoIcon src={logoIcon} alt="Logo" />
+                <Link href="/">
+                    <S.LogoIcon src={logoIcon} alt="Logo" />
+                </Link>
                 <S.Navigation>
                     {NAVIGATION_LIST.map((item) => (
                         <S.NavigationItem onClick={handleClick} href={`#${item}`} key={item}>
