@@ -27,6 +27,8 @@ export const Title = styled.h2`
 `;
 
 export const Card = styled.div`
+    ${mixins.flexAlign('start', 'center')}
+    flex-direction: column;
     width: 268px;
     padding: 28px 0 50px;
     border: 1px solid ${({ theme }) => theme.color.lightBlue};
