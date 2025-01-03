@@ -11,11 +11,11 @@ const Content = styled.div`
     padding: 32px 0;
 `;
 
-const Home = () => {
+const Page500 = () => {
     return <Content>500</Content>;
 };
 
-export default Home;
+export default Page500;
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
     return {
