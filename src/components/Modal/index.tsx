@@ -1,11 +1,10 @@
 import React from 'react';
 
 import * as S from './style';
-import { isServer } from '@/constants';
 
 export const MODAL_ID = 'modal';
 
-if (!isServer) {
+if (typeof window !== 'undefined') {
     const modalRoot: Element = window.document.createElement('div');
     modalRoot.id = MODAL_ID;
     window.document.body.appendChild(modalRoot);
