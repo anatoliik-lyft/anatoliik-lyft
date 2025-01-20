@@ -30,7 +30,7 @@ export default function App({ Component, pageProps }: AppProps) {
 
                 {/* OG */}
                 <meta name="og:type" content="site" />
-                <meta name="og:title" content="Anatolii Kurochkin | Front-end developer | Mentor" />
+                <meta name="og:title" content="Anatolii Kurochkin | Software Engineer | Mentor" />
                 <meta
                     name="og:description"
                     content="Staff Software Engineer | Frontend Developer | React Developer | JavaScript Developer"
