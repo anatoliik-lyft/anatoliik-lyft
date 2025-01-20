@@ -12,7 +12,7 @@ export const Overlay = styled.div`
     position: absolute;
     z-index: 1;
     border-radius: 4px;
-    box-shadow: 1px 1px 9px ${({ theme }) => hexToRgba(theme.color.black, 0.12)};
+    box-shadow: 1px 1px 9px ${({ theme }) => hexToRgba(theme.color.elevation, 0.12)};
 
     &.appear-bottom-enter {
         transform: translateY(10px);

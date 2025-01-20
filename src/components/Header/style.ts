@@ -33,13 +33,13 @@ export const Header = styled.header`
     ${getHeaderPosition}
     ${getHeaderHeight}
     width: 100%;
-    background-color: ${({ theme }) => theme.color.white};
+    background-color: ${({ theme }) => theme.color.background};
 
     &::before {
         ${mixins.position({ position: 'absolute', top: 0, left: 0, zIndex: 1 })}
         ${mixins.wh('100%')}
     content: '';
-        background-color: ${({ theme }) => theme.color.white};
+        background-color: ${({ theme }) => theme.color.background};
     }
 
     &::after {
@@ -72,7 +72,7 @@ export const MobileMenu = styled.div`
     ${mixins.wh('260px', '100%')}
     padding-right: 16px;
     padding-left: 24px;
-    background-color: ${({ theme }) => theme.color.white};
+    background-color: ${({ theme }) => theme.color.background};
     box-shadow: 0 0 10px ${({ theme }) => hexToRgba(theme.color.darkGrey, 0.2)};
     ${getMobileMenuPadding}
 `;

@@ -1,17 +1,18 @@
 import React from 'react';
 import Head from 'next/head';
-import { useRouter } from 'next/router';
 import type { AppProps } from 'next/app';
 import { Normalize } from 'styled-normalize';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Analytics } from '@vercel/analytics/react';
 import { ThemeProvider } from 'styled-components';
 
-import theme from '@/styles/theme';
+import { getTheme } from '@/styles/theme';
 import GlobalStyle from '@/styles/global';
+import { useDarkMode } from '@/hooks/useDarkMode';
 
 export default function App({ Component, pageProps }: AppProps) {
-    const { locale } = useRouter();
+    const darkMode = useDarkMode();
+
     return (
         <>
             <Head>
@@ -47,7 +48,7 @@ export default function App({ Component, pageProps }: AppProps) {
                 <meta name="image" property="og:image" content="/images/og.png" />
                 {/* LinkedIn */}
             </Head>
-            <ThemeProvider theme={theme}>
+            <ThemeProvider theme={getTheme(darkMode)}>
                 <Normalize />
                 <GlobalStyle />
                 <Component {...pageProps} />

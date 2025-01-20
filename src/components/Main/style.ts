@@ -103,20 +103,17 @@ export const SocialMediaList = styled.div`
     `}
 `;
 
-export const Logo = styled(Image)`
-    ${mixins.wh('32px')}
-
-    ${mixins.media.laptop`
-        ${mixins.wh('32px')}
-    `}
-`;
-
 export const SocialMedia = styled.a`
     display: block;
     margin-right: 24px;
+    color: ${({ theme }) => theme.color.text};
 
     &:first-child {
         margin-right: 20px;
+    }
+
+    &:last-child {
+        margin-right: 0;
     }
 `;
 

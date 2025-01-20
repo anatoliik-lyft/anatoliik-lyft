@@ -39,8 +39,8 @@ export default createGlobalStyle`
     font-family: 'Sansation', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    color: ${({ theme }) => theme.color.black};
-    background-color: ${({ theme }) => theme.color.white}
+    color: ${({ theme }) => theme.color.text};
+    background-color: ${({ theme }) => theme.color.background}
   }
 
   * {

@@ -4,8 +4,9 @@ enum EColor {
     accent = 'accent',
     darkAccent = 'darkAccent',
     lightBlue = 'lightBlue',
-    white = 'white',
-    black = 'black',
+    background = 'background',
+    text = 'text',
+    elevation = 'elevation',
     darkGrey = 'darkGrey',
     grey = 'grey',
     lightGrey = 'lightGrey',
@@ -53,30 +54,33 @@ export type TTheme = {
     };
 };
 
-const theme: TTheme['theme'] = {
-    color: {
-        accent: '#03A9F4',
-        darkAccent: '#0288D1',
-        lightBlue: '#B3E5FC',
-        white: '#FFFFFF',
-        black: '#212121',
-        darkGrey: '#757575',
-        grey: '#9E9E9E',
-        lightGrey: '#BDBDBD',
-    },
-    breakpoint: breakpoints,
-    transition: {
-        duration: 300,
-    },
-    dimention: {
-        headerHeightMobile: 50,
-        headerHeightDesktop: 80,
-    },
-    zIndex: {
-        header: 1100,
-        drawer: 1200,
-        modal: 1300,
-    },
-};
+export const getTheme = (darkMode = false) => {
+    const theme = {
+        color: {
+            accent: darkMode ? '#03A9F4' : '#03A9F4',
+            darkAccent: '#0288D1',
+            lightBlue: darkMode ? '#B3E5FC' : '#B3E5FC',
+            background: darkMode ? '#212121' : '#FFFFFF',
+            text: darkMode ? '#FFFFFF' : '#212121',
+            elevation: darkMode ? '#212121' : '#212121',
+            darkGrey: darkMode ? '#757575' : '#757575',
+            grey: darkMode ? '#9E9E9E' : '#9E9E9E',
+            lightGrey: darkMode ? '#BDBDBD' : '#BDBDBD',
+        },
+        breakpoint: breakpoints,
+        transition: {
+            duration: 300,
+        },
+        dimention: {
+            headerHeightMobile: 50,
+            headerHeightDesktop: 80,
+        },
+        zIndex: {
+            header: 1100,
+            drawer: 1200,
+            modal: 1300,
+        },
+    };
 
-export default theme;
+    return theme;
+};

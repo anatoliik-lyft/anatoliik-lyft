@@ -11,13 +11,13 @@ export const Window = styled.div`
     max-width: 864px;
     margin: auto;
     border-radius: 4px;
-    background-color: ${({ theme }) => theme.color.white};
+    background-color: ${({ theme }) => theme.color.background};
 `;
 
 export const Title = styled.div`
     ${mixins.h1}
     padding: 16px;
-    border-bottom: 1px solid ${({ theme }) => theme.color.black};
+    border-bottom: 1px solid ${({ theme }) => theme.color.text};
 `;
 
 export const Content = styled.div`

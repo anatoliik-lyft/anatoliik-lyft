@@ -2,18 +2,18 @@ import React from 'react';
 
 import * as S from './style';
 import faceImage from './images/face.png';
-import resumeIcon from './icons/resume.svg';
-import githubIcon from './icons/github.svg';
-import linkedinIcon from './icons/linkedin.svg';
-import instagramIcon from './icons/instagram.svg';
-import facebookIcon from './icons/facebook.svg';
+import { GitHub } from './icons/GitHub';
+import { Facebook } from './icons/Facebook';
+import { Instagram } from './icons/Instagram';
+import { Linkedin } from './icons/Linkedin';
+import { Resume } from './icons/Resume';
 
 const socialMediaList = [
-    { id: 'resume', src: resumeIcon, url: '/docs/anatolii-kurochkin-resume.pdf' },
-    { id: 'github', src: githubIcon, url: 'https://github.com/anatoliik-lyft' },
-    { id: 'linkedin', src: linkedinIcon, url: 'https://www.linkedin.com/in/anatoliisf' },
-    { id: 'instagram', src: instagramIcon, url: 'https://www.instagram.com/anatoliisf' },
-    { id: 'facebook', src: facebookIcon, url: 'https://www.facebook.com/anatoliisf' },
+    { id: 'resume', Component: Resume, url: '/docs/anatolii-kurochkin-resume.pdf' },
+    { id: 'github', Component: GitHub, url: 'https://github.com/anatoliik-lyft' },
+    { id: 'linkedin', Component: Linkedin, url: 'https://www.linkedin.com/in/anatoliisf' },
+    { id: 'instagram', Component: Instagram, url: 'https://www.instagram.com/anatoliisf' },
+    { id: 'facebook', Component: Facebook, url: 'https://www.facebook.com/anatoliisf' },
 ];
 
 const Main = () => {
@@ -25,11 +25,13 @@ const Main = () => {
                 <S.FaceImg priority src={faceImage} alt="Avatar" />
             </S.Face>
             <S.SocialMediaList>
-                {socialMediaList.map(({ id, src, url }) => (
-                    <S.SocialMedia key={id} href={url} target="_blank">
-                        <S.Logo src={src} alt="Logo" />
-                    </S.SocialMedia>
-                ))}
+                {socialMediaList.map(({ id, Component, url }) => {
+                    return (
+                        <S.SocialMedia key={id} href={url} target="_blank">
+                            <Component />
+                        </S.SocialMedia>
+                    );
+                })}
             </S.SocialMediaList>
             <S.Copyright>Created with ❤️</S.Copyright>
         </S.Container>
