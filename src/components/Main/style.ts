@@ -7,22 +7,13 @@ export const BurgerButton = styled.div`
     ${mixins.position({ position: 'relative', zIndex: 2 })}
 `;
 
-export const Main = styled.div`
-    padding: 40px 0 56px;
-    overflow: hidden;
-
-    ${mixins.media.laptop`
-        padding: 56px 0 75px;
-    `}
-`;
-
 export const Container = styled.div`
     ${mixins.container}
 `;
 
 export const Title = styled.h1`
     ${mixins.h1}
-    margin: 0 0 12px;
+    margin: 64px 0 12px;
     text-transform: uppercase;
     text-align: center;
 
@@ -47,7 +38,7 @@ export const Subtitle = styled.div`
 export const Face = styled.div`
     ${mixins.wh('212px', '232px')}
     position: relative;
-    margin: 0 auto;
+    margin: auto;
 
     &::before {
         ${mixins.wh('212px', '54px')}
@@ -85,19 +76,58 @@ export const Face = styled.div`
     }
 
     ${mixins.media.laptop`
-    ${mixins.wh('274px', '300px')}
+        ${mixins.wh('274px', '300px')}
+        margin: 0 auto;
 
-    &::before {
-        ${mixins.wh('352px', '54px')}
-    }
-    &::after {
-        ${mixins.wh('692px', '190px')}
-        bottom: -60px;
-    }
-  `}
+        &::before {
+            ${mixins.wh('352px', '54px')}
+        }
+        &::after {
+            ${mixins.wh('692px', '190px')}
+            bottom: -60px;
+        }
+    `}
 `;
 
 export const FaceImg = styled(Image)<ImageProps>`
     width: 100%;
     height: 100%;
+`;
+
+export const SocialMediaList = styled.div`
+    ${mixins.flexAlign('center', 'center')}
+    margin: auto auto 0;
+
+    ${mixins.media.laptop`
+        margin: 64px auto 0;
+    `}
+`;
+
+export const Logo = styled(Image)`
+    ${mixins.wh('32px')}
+
+    ${mixins.media.laptop`
+        ${mixins.wh('32px')}
+    `}
+`;
+
+export const SocialMedia = styled.a`
+    display: block;
+    margin-right: 24px;
+
+    &:first-child {
+        margin-right: 20px;
+    }
+`;
+
+export const Copyright = styled.div`
+    ${mixins.h5}
+    margin: 20px 0 32px 0;
+    text-transform: uppercase;
+    opacity: 0.7;
+    text-align: center;
+
+    ${mixins.media.laptop`
+        margin: 24px 0 32px 0;
+    `}
 `;

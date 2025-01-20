@@ -1,7 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
 export default createGlobalStyle`
-  ${require('glider-js/glider.min.css').default}
   @font-face {
     font-family: 'Sansation';
     src:

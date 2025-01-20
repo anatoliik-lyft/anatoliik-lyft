@@ -1,5 +1,4 @@
 import React from 'react';
-import { GetStaticProps } from 'next';
 import styled from 'styled-components';
 
 import { mixins } from '@/styles';
@@ -16,14 +15,3 @@ const Page500 = () => {
 };
 
 export default Page500;
-
-export const getStaticProps: GetStaticProps = async ({ locale }) => {
-    return {
-        props: {
-            i18n: {
-                ...require(`../i18n/${locale}.json`),
-            },
-            now: new Date().getTime(),
-        },
-    };
-};

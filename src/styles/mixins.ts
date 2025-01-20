@@ -1,8 +1,6 @@
 import React from 'react';
 import { css, CSSObject, Interpolation } from 'styled-components';
 
-import hexToRgba from './hexToRgba';
-
 type CSSProperties = React.CSSProperties;
 
 export const breakpoints = {
@@ -118,38 +116,12 @@ export const h5 = css`
 `;
 
 export const container = css`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 100%;
+    height: 100vh;
     max-width: ${({ theme }) => theme.breakpoint.laptop}px;
     margin: 0 auto;
-    padding-right: 12px;
-    padding-left: 12px;
-
-    ${media.laptop`
-        padding-right: 40px;
-        padding-left: 40px;
-    `}
-`;
-
-export const glider = css`
-    .glider-dots {
-        margin-top: 20px;
-    }
-    .glider-dot {
-        margin: 0;
-        background-color: ${({ theme }) => theme.color.lightBlue};
-
-        &:not(:last-child) {
-            margin-right: 8px;
-        }
-    }
-    .glider-dot.active {
-        background-color: ${({ theme }) => theme.color.accent};
-        box-shadow: 0 0 10px ${({ theme }) => hexToRgba(theme.color.accent, 0.5)};
-    }
-
-    ${media.laptop`
-        .glider-dots {
-            display: none;
-        }
-    `}
 `;

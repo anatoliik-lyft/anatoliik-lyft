@@ -5,26 +5,10 @@ import type { AppProps } from 'next/app';
 import { Normalize } from 'styled-normalize';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Analytics } from '@vercel/analytics/react';
-import styled, { css, ThemeProvider } from 'styled-components';
-import { NextIntlClientProvider } from 'next-intl';
+import { ThemeProvider } from 'styled-components';
 
 import theme from '@/styles/theme';
-import Header from '@/components/Header';
-
 import GlobalStyle from '@/styles/global';
-import { mixins, TTheme } from 'src/styles';
-
-export const Main = styled.main`
-    ${({ theme }: TTheme) => {
-        return css`
-            padding-top: ${theme.dimention.headerHeightMobile}px;
-
-            ${mixins.media.laptop`
-                padding-top: ${theme.dimention.headerHeightDesktop}px;
-            `}
-        `;
-    }}
-`;
 
 export default function App({ Component, pageProps }: AppProps) {
     const { locale } = useRouter();
@@ -37,10 +21,10 @@ export default function App({ Component, pageProps }: AppProps) {
                     content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
                 />
                 <link rel="shortcut icon" href="/favicon.ico" />
-                <title>Anatolii Kurochkin | Front-end developer | Mentor</title>
+                <title>Anatolii Kurochkin | Software Engineer | Mentor</title>
                 <meta
                     name="description"
-                    content="Senior Frontend Developer | React Developer | JavaScript Developer | Software Engineer"
+                    content="Staff Software Engineer | Frontend Developer | React Developer | JavaScript Developer"
                 />
                 <meta name="author" content="Anatolii Kurochkin" />
 
@@ -49,7 +33,7 @@ export default function App({ Component, pageProps }: AppProps) {
                 <meta name="og:title" content="Anatolii Kurochkin | Front-end developer | Mentor" />
                 <meta
                     name="og:description"
-                    content="Senior Frontend Developer | React Developer | JavaScript Developer | Software Engineer"
+                    content="Staff Software Engineer | Frontend Developer | React Developer | JavaScript Developer"
                 />
                 <meta name="og:url" content="https://anatolii.us" />
                 <meta name="og:site_name" content="Anatolii Kurochkin" />
@@ -66,26 +50,7 @@ export default function App({ Component, pageProps }: AppProps) {
             <ThemeProvider theme={theme}>
                 <Normalize />
                 <GlobalStyle />
-                <NextIntlClientProvider
-                    formats={{
-                        dateTime: {
-                            short: {
-                                day: 'numeric',
-                                month: 'short',
-                                year: 'numeric',
-                            },
-                        },
-                    }}
-                    messages={pageProps.i18n}
-                    now={new Date(pageProps.now)}
-                    timeZone="America/Los_Angeles"
-                    locale={locale}
-                >
-                    <Header />
-                    <Main>
-                        <Component {...pageProps} />
-                    </Main>
-                </NextIntlClientProvider>
+                <Component {...pageProps} />
                 <Analytics />
                 <SpeedInsights />
             </ThemeProvider>
