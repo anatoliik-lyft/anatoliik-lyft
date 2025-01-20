@@ -121,7 +121,7 @@ export const container = css`
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 100vh;
+    height: 100dvh;
     max-width: ${({ theme }) => theme.breakpoint.laptop}px;
     margin: 0 auto;
 `;
